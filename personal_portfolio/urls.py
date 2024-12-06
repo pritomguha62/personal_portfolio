@@ -19,9 +19,9 @@ from django.urls import path, include
 from personal_portfolio import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    # path('admin_panel/', include("admin_panel.urls")),
-    path('', views.home),
+    # path('admin/', admin.site.urls),
+    path('admin_panel/', include("admin_panel.urls")),
+    path('', views.home, name='home'),
     path('service/', include("service.urls")),
 ]
 

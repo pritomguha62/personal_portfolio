@@ -6,5 +6,8 @@ from admin_panel import views
 urlpatterns = [
     # path('admin/', admin.site.urls),
     # path('service/', include("service.urls")),
-    path('dashboard', views.dashboard),
+    path('', views.dashboard),
+    path('dashboard/', views.dashboard, name='dashboard'),
+    path('signin/', views.signin, name='admin_panel.signin'),
+    path('signup/', views.signup, name='admin_panel.signup'),
 ]
