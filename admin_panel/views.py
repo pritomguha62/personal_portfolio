@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import UserRegistrationForm
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate
+from django.contrib import messages
+
 
 from .models import *
 from django.contrib.auth import get_user_model
@@ -27,7 +29,20 @@ def signin_info(request):
 
         password = request.POST.get('password')
 
-        # return HttpResponse(request.POST.get('email') + request.POST.get('password'))
+        user = authenticate(email=email, password=password)
+
+        if user is not None:
+            login(request, user)
+
+            # Set custom session data
+            request.session['email'] = user.email
+            request.session['is_admin'] = user.is_staff
+
+            # return HttpResponse(user.is_staff)
+            return redirect('dashboard')
+        else:
+            messages.error(request, "Invalid username or password.")
+
 
 def signup_info(request):
 
@@ -42,3 +57,5 @@ def signup_info(request):
     else:
         form = UserRegistrationForm()
     return render(request, 'admin_templates/admin_signup.html', {'form': form})
+
+
