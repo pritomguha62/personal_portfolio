@@ -56,7 +56,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <form method="POST" action="">
+                                    <form method="POST" action="{% url 'admin_panel.signup_info' %}">
+                                        {% csrf_token %}
                                         <div class="col-md-12 mb-3">
                                             <h2>Sign Up</h2>
                                             <p>Enter your email and password to register</p>
@@ -64,25 +65,31 @@
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label class="form-label">Name</label>
-                                                <input type="text" class="form-control add-billing-address-input" />
+                                                <input name="name" type="text" class="form-control add-billing-address-input" />
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label class="form-label">Email</label>
-                                                <input type="email" class="form-control" />
+                                                <input name="email" type="email" class="form-control" />
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="mb-3">
                                                 <label class="form-label">Password</label>
-                                                <input type="text" class="form-control" />
+                                                <input name="password" type="password" class="form-control" />
+                                            </div>
+                                        </div>
+                                         <div class="col-12">
+                                            <div class="mb-3">
+                                                <label class="form-label">Confirm Password</label>
+                                                <input name="confirm_password" type="password" class="form-control" />
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="mb-3">
                                                 <div class="form-check form-check-primary form-check-inline">
-                                                    <input class="form-check-input me-3" type="checkbox" id="form-check-default" />
+                                                    <input name="terms_privacy" class="form-check-input me-3" type="checkbox" id="form-check-default" />
                                                     <label class="form-check-label" for="form-check-default"> I agree the <a href="javascript:void(0);" class="text-primary">Terms and Conditions</a> </label>
                                                 </div>
                                             </div>

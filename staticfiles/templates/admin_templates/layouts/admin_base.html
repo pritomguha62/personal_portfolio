@@ -54,12 +54,12 @@
         <header class="header navbar navbar-expand-sm expand-header">
             <ul class="navbar-item theme-brand flex-row text-center">
                 <li class="nav-item theme-logo">
-                    <a href="index.html">
-                        <img src="https://designreset.com/cork/html/src/assets/img/logo2.svg" class="navbar-logo" alt="logo" />
+                    <a href="{% url 'dashboard' %}">
+                        <img src="{% static 'admin_assets/src/assets/img/cork-logo.png' %}" class="navbar-logo" alt="logo" />
                     </a>
                 </li>
                 <li class="nav-item theme-text">
-                    <a href="index.html" class="nav-link"> CORK </a>
+                    <a href="{% url 'dashboard' %}" class="nav-link"> Dashboard </a>
                 </li>
             </ul>
 
@@ -485,7 +485,7 @@
                             </a>
                         </div>
                         <div class="dropdown-item">
-                            <a href="auth-boxed-signin.html">
+                            <a href="{% url 'admin_panel.sign_out' %}">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -523,12 +523,12 @@
                 <div class="navbar-nav theme-brand flex-row text-center">
                     <div class="nav-logo">
                         <div class="nav-item theme-logo">
-                            <a href="index.html">
-                                <img src="https://designreset.com/cork/html/src/assets/img/logo.svg" class="navbar-logo" alt="logo" />
+                            <a href="{% url 'dashboard' %}">
+                                <img src="{% static '/admin_assets/src/assets/img/profile.svg' %}" class="navbar-logo" alt="logo" />
                             </a>
                         </div>
                         <div class="nav-item theme-text">
-                            <a href="index.html" class="nav-link"> CORK </a>
+                            <a href="{% url 'dashboard' %}" class="nav-link"> CORK </a>
                         </div>
                     </div>
                     <div class="nav-item sidebar-toggle">
@@ -1773,7 +1773,7 @@
 
                                         <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                                             <ol class="breadcrumb">
-                                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                                                <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
                                                 <li class="breadcrumb-item active" aria-current="page">Analytics</li>
                                             </ol>
                                         </nav>

@@ -3,6 +3,8 @@ from .models import *
 
 # Create your views here.
 
+def add_service(request):
+    return render(request, 'admin_templates/add_service.html')
 
 def add_service_info(request):
     
