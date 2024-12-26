@@ -3,8 +3,6 @@ from django.http import HttpResponse
 from .forms import UserRegistrationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
-
-
 from .models import *
 from django.contrib.auth import get_user_model
 

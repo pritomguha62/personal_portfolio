@@ -111,58 +111,60 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="services-widget position-relative">
+                        {% for service in services %}
                         <div class="service-item current d-flex flex-wrap align-items-center wow fadeInUp" data-wow-delay=".5s">
                             <div class="left-box d-flex flex-wrap align-items-center">
-                                <span class="number">01</span>
-                                <h3 class="service-title">Branding Design</h3>
+                                <span class="number">{{ forloop.counter }}</span>
+                                <h3 class="service-title">{{ service.title }}</h3>
                             </div>
                             <div class="right-box">
                                 <p>
-                                    I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people
+                                    {{ service.short_description }}
                                 </p>
                             </div>
                             <i class="flaticon-up-right-arrow"></i>
-                            <button data-mfp-src="#service-wrapper" class="service-link modal-popup"></button>
+                            <button data-mfp-src="#service-wrapper{{ forloop.counter }}" class="service-link modal-popup"></button>
                         </div>
-                        <div class="service-item d-flex flex-wrap align-items-center wow fadeInUp" data-wow-delay=".6s">
-                            <div class="left-box d-flex flex-wrap align-items-center">
-                                <span class="number">02</span>
-                                <h3 class="service-title">Web Design</h3>
-                            </div>
-                            <div class="right-box">
-                                <p>
-                                    I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people
-                                </p>
-                            </div>
-                            <i class="flaticon-up-right-arrow"></i>
-                            <button data-mfp-src="#service-wrapper" class="service-link modal-popup"></button>
-                        </div>
-                        <div class="service-item d-flex flex-wrap align-items-center wow fadeInUp" data-wow-delay=".7s">
-                            <div class="left-box d-flex flex-wrap align-items-center">
-                                <span class="number">03</span>
-                                <h3 class="service-title">UI/UX Design</h3>
-                            </div>
-                            <div class="right-box">
-                                <p>
-                                    I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people
-                                </p>
-                            </div>
-                            <i class="flaticon-up-right-arrow"></i>
-                            <button data-mfp-src="#service-wrapper" class="service-link modal-popup"></button>
-                        </div>
-                        <div class="service-item d-flex flex-wrap align-items-center wow fadeInUp" data-wow-delay=".8s">
-                            <div class="left-box d-flex flex-wrap align-items-center">
-                                <span class="number">04</span>
-                                <h3 class="service-title">Graphics Design</h3>
-                            </div>
-                            <div class="right-box">
-                                <p>
-                                    I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people
-                                </p>
-                            </div>
-                            <i class="flaticon-up-right-arrow"></i>
-                            <button data-mfp-src="#service-wrapper" class="service-link modal-popup"></button>
-                        </div>
+                        {% endfor %}
+<!--                        <div class="service-item d-flex flex-wrap align-items-center wow fadeInUp" data-wow-delay=".6s">-->
+<!--                            <div class="left-box d-flex flex-wrap align-items-center">-->
+<!--                                <span class="number">02</span>-->
+<!--                                <h3 class="service-title">Web Design</h3>-->
+<!--                            </div>-->
+<!--                            <div class="right-box">-->
+<!--                                <p>-->
+<!--                                    I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                            <i class="flaticon-up-right-arrow"></i>-->
+<!--                            <button data-mfp-src="#service-wrapper" class="service-link modal-popup"></button>-->
+<!--                        </div>-->
+<!--                        <div class="service-item d-flex flex-wrap align-items-center wow fadeInUp" data-wow-delay=".7s">-->
+<!--                            <div class="left-box d-flex flex-wrap align-items-center">-->
+<!--                                <span class="number">03</span>-->
+<!--                                <h3 class="service-title">UI/UX Design</h3>-->
+<!--                            </div>-->
+<!--                            <div class="right-box">-->
+<!--                                <p>-->
+<!--                                    I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                            <i class="flaticon-up-right-arrow"></i>-->
+<!--                            <button data-mfp-src="#service-wrapper" class="service-link modal-popup"></button>-->
+<!--                        </div>-->
+<!--                        <div class="service-item d-flex flex-wrap align-items-center wow fadeInUp" data-wow-delay=".8s">-->
+<!--                            <div class="left-box d-flex flex-wrap align-items-center">-->
+<!--                                <span class="number">04</span>-->
+<!--                                <h3 class="service-title">Graphics Design</h3>-->
+<!--                            </div>-->
+<!--                            <div class="right-box">-->
+<!--                                <p>-->
+<!--                                    I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                            <i class="flaticon-up-right-arrow"></i>-->
+<!--                            <button data-mfp-src="#service-wrapper" class="service-link modal-popup"></button>-->
+<!--                        </div>-->
                         <div class="active-bg wow fadeInUp" data-wow-delay=".5s"></div>
                     </div>
                 </div>
@@ -172,7 +174,9 @@
     <!-- SERVICES SECTION END -->
 
     <!-- start: Service Popup -->
-    <div id="service-wrapper" class="popup_content_area zoom-anim-dialog mfp-hide" data-lenis-prevent="">
+
+    {% for service in services %}
+        <div id="service-wrapper{{ forloop.counter }}" class="popup_content_area zoom-anim-dialog mfp-hide" data-lenis-prevent="">
         <div class="popup_modal_img">
             <img src="images/modal-img.jpg" alt="" />
         </div>
@@ -183,7 +187,7 @@
                         <div class="service_details_content">
                             <div class="service_info">
                                 <h6 class="subtitle">SERVICES</h6>
-                                <h2 class="title">UI/UX Design</h2>
+                                <h2 class="title">{{ service.title }}</h2>
                                 <div class="desc">
                                     <p>
                                         Elizabeth some dodgy chavs are you taking the piss faff about pardon amongst car boot a load of old tosh is cracking goal blow off telling brown.
@@ -283,6 +287,7 @@
             </div>
         </div>
     </div>
+    {% endfor %}
     <!-- end: Service Popup -->
 
     <!-- PORTFOLIO SECTION START -->
@@ -304,9 +309,12 @@
                     <div class="portfolio-filter text-center wow fadeInUp" data-wow-delay=".5s">
                         <div class="button-group filter-button-group">
                             <button data-filter="*" class="active">All</button>
-                            <button data-filter=".uxui">UX/UI</button>
-                            <button data-filter=".branding">Branding</button>
-                            <button data-filter=".mobile-app">Apps</button>
+                            {% for service in services %}
+                            <button data-filter=".uxui">{{ service.title }}</button>
+                            {% endfor %}
+<!--                            <button data-filter=".uxui">UX/UI</button>-->
+<!--                            <button data-filter=".branding">Branding</button>-->
+<!--                            <button data-filter=".mobile-app">Apps</button>-->
                             <div class="active-bg"></div>
                         </div>
                     </div>
