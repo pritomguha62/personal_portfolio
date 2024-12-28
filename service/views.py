@@ -25,3 +25,7 @@ def add_service_info(request):
         )
         
         return redirect('home')
+
+def services(request):
+    services = Service.objects.all()
+    return render(request, 'admin_templates/services.html', {'services':services})
