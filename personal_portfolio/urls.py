@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin_panel/', include("admin_panel.urls")),
     path('', views.home, name='home'),
     path('service/', include("service.urls")),
+    path('portfolio/', include("portfolio.urls")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -310,7 +310,7 @@
                         <div class="button-group filter-button-group">
                             <button data-filter="*" class="active">All</button>
                             {% for service in services %}
-                            <button data-filter=".uxui">{{ service.title }}</button>
+                            <button data-filter=".service{{ service.id }}">{{ service.title }}</button>
                             {% endfor %}
 <!--                            <button data-filter=".uxui">UX/UI</button>-->
 <!--                            <button data-filter=".branding">Branding</button>-->
@@ -322,50 +322,52 @@
                     <div class="portfolio-box wow fadeInUp" data-wow-delay=".6s">
                         <div class="portfolio-sizer"></div>
                         <div class="gutter-sizer"></div>
-                        <div class="portfolio-item branding">
+                        {% for portfolio in portfolios %}
+                            <div class="portfolio-item service{{ portfolio.service_id }}">
                             <div class="image-box">
-                                <img src="images/2_1.jpg" alt="" />
+                                <img width="377px" height="323px" src="{{ portfolio.image.url }}" alt="{{ portfolio.title }}" />
                             </div>
                             <div class="content-box">
-                                <h3 class="portfolio-title">Deloitte</h3>
+                                <h3 class="portfolio-title">{{ portfolio.title }}</h3>
                                 <p>Project was about precision and information.</p>
                                 <i class="flaticon-up-right-arrow"></i>
                                 <button data-mfp-src="#portfolio-wrapper" class="portfolio-link modal-popup"></button>
                             </div>
                         </div>
-                        <div class="portfolio-item uxui">
-                            <div class="image-box">
-                                <img src="images/1_1.jpg" alt="" />
-                            </div>
-                            <div class="content-box">
-                                <h3 class="portfolio-title">New Age</h3>
-                                <p>Project was about precision and information.</p>
-                                <i class="flaticon-up-right-arrow"></i>
-                                <button data-mfp-src="#portfolio-wrapper" class="portfolio-link modal-popup"></button>
-                            </div>
-                        </div>
-                        <div class="portfolio-item mobile-app">
-                            <div class="image-box">
-                                <img src="images/3.jpg" alt="" />
-                            </div>
-                            <div class="content-box">
-                                <h3 class="portfolio-title">Sebastian</h3>
-                                <p>Project was about precision and information.</p>
-                                <i class="flaticon-up-right-arrow"></i>
-                                <button data-mfp-src="#portfolio-wrapper" class="portfolio-link modal-popup"></button>
-                            </div>
-                        </div>
-                        <div class="portfolio-item branding">
-                            <div class="image-box">
-                                <img src="images/4.jpg" alt="" />
-                            </div>
-                            <div class="content-box">
-                                <h3 class="portfolio-title">Mochnix</h3>
-                                <p>Project was about precision and information.</p>
-                                <i class="flaticon-up-right-arrow"></i>
-                                <button data-mfp-src="#portfolio-wrapper" class="portfolio-link modal-popup"></button>
-                            </div>
-                        </div>
+                        {% endfor %}
+<!--                        <div class="portfolio-item uxui">-->
+<!--                            <div class="image-box">-->
+<!--                                <img src="images/1_1.jpg" alt="" />-->
+<!--                            </div>-->
+<!--                            <div class="content-box">-->
+<!--                                <h3 class="portfolio-title">New Age</h3>-->
+<!--                                <p>Project was about precision and information.</p>-->
+<!--                                <i class="flaticon-up-right-arrow"></i>-->
+<!--                                <button data-mfp-src="#portfolio-wrapper" class="portfolio-link modal-popup"></button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="portfolio-item mobile-app">-->
+<!--                            <div class="image-box">-->
+<!--                                <img src="images/3.jpg" alt="" />-->
+<!--                            </div>-->
+<!--                            <div class="content-box">-->
+<!--                                <h3 class="portfolio-title">Sebastian</h3>-->
+<!--                                <p>Project was about precision and information.</p>-->
+<!--                                <i class="flaticon-up-right-arrow"></i>-->
+<!--                                <button data-mfp-src="#portfolio-wrapper" class="portfolio-link modal-popup"></button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="portfolio-item branding">-->
+<!--                            <div class="image-box">-->
+<!--                                <img src="images/4.jpg" alt="" />-->
+<!--                            </div>-->
+<!--                            <div class="content-box">-->
+<!--                                <h3 class="portfolio-title">Mochnix</h3>-->
+<!--                                <p>Project was about precision and information.</p>-->
+<!--                                <i class="flaticon-up-right-arrow"></i>-->
+<!--                                <button data-mfp-src="#portfolio-wrapper" class="portfolio-link modal-popup"></button>-->
+<!--                            </div>-->
+<!--                        </div>-->
                     </div>
                 </div>
             </div>

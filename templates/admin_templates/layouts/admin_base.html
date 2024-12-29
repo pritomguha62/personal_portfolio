@@ -30,6 +30,16 @@
     <link href="{%static 'admin_assets/src/assets/css/dark/dashboard/dash_1.css' %}" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 
+    <!--  BEGIN CUSTOM STYLE FILE  -->
+    <link href="{%static 'admin_assets/src/assets/css/light/scrollspyNav.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{%static 'admin_assets/src/assets/css/dark/scrollspyNav.css' %}" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="{%static 'admin_assets/src/plugins/src/tomSelect/tom-select.default.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'admin_assets/src/plugins/css/light/tomSelect/custom-tomSelect.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'admin_assets/src/plugins/css/dark/tomSelect/custom-tomSelect.css' %}">
+
+    <!--  END CUSTOM STYLE FILE  -->
+
     <style>
         body.dark .layout-px-spacing, .layout-px-spacing {
             min-height: calc(100vh - 155px) !important;
@@ -621,7 +631,7 @@
                     </li>
 
                     <li class="menu">
-                        <a href="#apps" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <a href="#service" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -646,7 +656,7 @@
                                     <line x1="1" y1="9" x2="4" y2="9"></line>
                                     <line x1="1" y1="14" x2="4" y2="14"></line>
                                 </svg>
-                                <span>Services</span>
+                                <span>Service</span>
                             </div>
                             <div>
                                 <svg
@@ -665,134 +675,90 @@
                                 </svg>
                             </div>
                         </a>
-                        <ul class="collapse submenu list-unstyled" id="apps" data-bs-parent="#accordionExample">
+                        <ul class="collapse submenu list-unstyled" id="service" data-bs-parent="#accordionExample">
                             <li>
-                                <a href="{% url 'admin_panel.services' %}"> All Services </a>
+                                <a href="{% url 'admin_panel.all_services' %}"> All Services </a>
                             </li>
                             <li>
-                                <a href="{% url 'admin_panel.add_service' %}"> Add Services </a>
+                                <a href="{% url 'admin_panel.add_service' %}"> Add Service </a>
                             </li>
-                            <li>
-                                <a href="app-mailbox.html"> Mailbox </a>
-                            </li>
-                            <li>
-                                <a href="app-todoList.html"> Todo List </a>
-                            </li>
-                            <li>
-                                <a href="app-notes.html"> Notes </a>
-                            </li>
-                            <li>
-                                <a href="app-scrumboard.html"> Scrumboard </a>
-                            </li>
-                            <li>
-                                <a href="app-contacts.html"> Contacts </a>
-                            </li>
-                            <li>
-                                <a href="#invoice" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle collapsed">
-                                    Invoice
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="feather feather-chevron-right"
-                                    >
-                                        <polyline points="9 18 15 12 9 6"></polyline>
-                                    </svg>
-                                </a>
-                                <ul class="collapse list-unstyled sub-submenu" id="invoice" data-bs-parent="#apps">
-                                    <li>
-                                        <a href="app-invoice-list.html"> List </a>
-                                    </li>
-                                    <li>
-                                        <a href="app-invoice-preview.html"> Preview </a>
-                                    </li>
-                                    <li>
-                                        <a href="app-invoice-add.html"> Add </a>
-                                    </li>
-                                    <li>
-                                        <a href="app-invoice-edit.html"> Edit </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#ecommerce" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle collapsed">
-                                    Ecommerce
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="feather feather-chevron-right"
-                                    >
-                                        <polyline points="9 18 15 12 9 6"></polyline>
-                                    </svg>
-                                </a>
-                                <ul class="collapse list-unstyled sub-submenu" id="ecommerce" data-bs-parent="#apps">
-                                    <li>
-                                        <a href="app-ecommerce-product-shop.html"> Shop </a>
-                                    </li>
-                                    <li>
-                                        <a href="app-ecommerce-product.html"> Product </a>
-                                    </li>
-                                    <li>
-                                        <a href="app-ecommerce-product-list.html"> List </a>
-                                    </li>
-                                    <li>
-                                        <a href="app-ecommerce-product-add.html"> Create </a>
-                                    </li>
-                                    <li>
-                                        <a href="app-ecommerce-product-edit.html"> Edit </a>
-                                    </li>
-                                </ul>
-                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="menu menu-heading">
+                        <div class="heading">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="feather feather-minus"
+                            >
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            <span>APPLICATIONS</span>
+                        </div>
+                    </li>
+
+                    <li class="menu">
+                        <a href="#portfolio" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-cpu"
+                                >
+                                    <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                                    <rect x="9" y="9" width="6" height="6"></rect>
+                                    <line x1="9" y1="1" x2="9" y2="4"></line>
+                                    <line x1="15" y1="1" x2="15" y2="4"></line>
+                                    <line x1="9" y1="20" x2="9" y2="23"></line>
+                                    <line x1="15" y1="20" x2="15" y2="23"></line>
+                                    <line x1="20" y1="9" x2="23" y2="9"></line>
+                                    <line x1="20" y1="14" x2="23" y2="14"></line>
+                                    <line x1="1" y1="9" x2="4" y2="9"></line>
+                                    <line x1="1" y1="14" x2="4" y2="14"></line>
+                                </svg>
+                                <span>Portfolio</span>
+                            </div>
+                            <div>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-chevron-right"
+                                >
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </div>
+                        </a>
+                        <ul class="collapse submenu list-unstyled" id="portfolio" data-bs-parent="#accordionExample">
 
                             <li>
-                                <a href="#blog" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle collapsed">
-                                    Blog
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="feather feather-chevron-right"
-                                    >
-                                        <polyline points="9 18 15 12 9 6"></polyline>
-                                    </svg>
-                                </a>
-                                <ul class="collapse list-unstyled sub-submenu" id="blog" data-bs-parent="#apps">
-                                    <li>
-                                        <a href="app-blog-grid.html"> Grid </a>
-                                    </li>
-                                    <li>
-                                        <a href="app-blog-list.html"> List </a>
-                                    </li>
-                                    <li>
-                                        <a href="app-blog-post.html"> Post </a>
-                                    </li>
-                                    <li>
-                                        <a href="app-blog-create.html"> Create </a>
-                                    </li>
-                                    <li>
-                                        <a href="app-blog-edit.html"> Edit </a>
-                                    </li>
-                                </ul>
+                                <a href="{% url 'admin_panel.all_portfolios' %}"> All Portfolios </a>
                             </li>
+                            <li>
+                                <a href="{% url 'admin_panel.add_portfolio' %}"> Add Portfolio </a>
+                            </li>
+
                         </ul>
                     </li>
 
@@ -1948,7 +1914,8 @@
             <!--  BEGIN FOOTER  -->
             <div class="footer-wrapper">
                 <div class="footer-section f-section-1">
-                    <p class="">Copyright © <span class="dynamic-year">{% now "Y" %}</span> <a target="_blank" href="https://designreset.com/cork-admin/">DesignReset</a>, All rights reserved.</p>
+                    <p class="">Copyright © <span class="dynamic-year">{% now "Y" %}</span> <a target="_blank" href="https://techpartit.net/">Pritom GK</a>, All rights reserved.</p>
+                    <p class="">Made by <span class="dynamic-year">{% now "Y" %}</span> <a target="_blank" href="https://techpartit.net/">Pritom GK</a>.</p>
                 </div>
                 <div class="footer-section f-section-2">
                     <p class="">
@@ -1977,6 +1944,12 @@
     <script src="{%static 'admin_assets/src/plugins/src/apex/apexcharts.min.js' %}"></script>
     <script src="{%static 'admin_assets/src/assets/js/dashboard/dash_1.js' %}"></script>
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="{%static 'admin_assets/src/assets/js/scrollspyNav.js' %}"></script>
+    <script src="{%static 'admin_assets/src/plugins/src/tomSelect/tom-select.base.js' %}"></script>
+    <script src="{%static 'admin_assets/src/plugins/src/tomSelect/custom-tom-select.js' %}"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
 </body>
 
 <!-- Mirrored from designreset.com/cork/html/vertical-dark-menu/layout-empty.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Nov 2024 05:31:12 GMT -->

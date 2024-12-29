@@ -15,8 +15,9 @@ class Service(models.Model):
     description = models.TextField(null=True, blank=True)
     slug = models.SlugField(unique=True, null=True)
     view_count = models.IntegerField(default=1)
-    image = models.ImageField(upload_to='service_images/')
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
+    image = models.ImageField(null=True, blank=True, upload_to='service_images/')
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='publish')
     is_deleted = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+

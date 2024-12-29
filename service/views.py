@@ -1,5 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
+import os
+from django.http import HttpResponseRedirect
+from django.contrib import messages
 
 # Create your views here.
 
@@ -23,9 +26,22 @@ def add_service_info(request):
             description = description,
             image = image,
         )
-        
-        return redirect('home')
 
-def services(request):
+        messages.success(request, "Service added successfully.")
+
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+def all_services(request):
     services = Service.objects.all()
     return render(request, 'admin_templates/services.html', {'services':services})
+
+
+def delete_service(request, id):
+    service = get_object_or_404(Service, id=id)
+    if service.image and os.path.isfile(service.image.path):
+        os.remove(service.image.path)
+    service.delete()
+    messages.success(request, "Service deleted successfully.")
+    # return redirect('blog_post_detail', id=service.id)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
