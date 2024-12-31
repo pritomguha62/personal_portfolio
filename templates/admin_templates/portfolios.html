@@ -15,29 +15,34 @@
                                 <th>Title</th>
                                 <th>Image</th>
                                 <th>Short Des.</th>
-<!--                                <th>Description</th>-->
+                                <th>Video</th>
                                 <th class="">Status</th>
                                 <th class="text-center dt-no-sorting">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                        {% for service in services %}
+                        {% for portfolio in portfolios %}
                             <tr>
                                 <td class="checkbox-column"> {{ forloop.counter }} </td>
-                                <td class="user-name">{{ service.title }}</td>
+                                <td class="user-name">{{ portfolio.title }}</td>
                                 <td class="">
                                     <a class="profile-img" href="javascript: void(0);">
-                                        {% if service.image %}
-                                            <img width="40px" height="40px" src="{{ service.image.url }}" alt="image">
+                                        {% if portfolio.image %}
+                                            <img width="40px" height="40px" src="{{ portfolio.image.url }}" alt="image">
                                         {% endif %}
                                     </a>
                                 </td>
-                                <td>{{ service.short_description }}</td>
-<!--                                <td>555-555-5555</td>-->
+                                <td>{{ portfolio.short_description }}</td>
+                                <td>
+
+                                        {% if portfolio.video %}
+                                            <video width="40px" height="40px" src="{{ portfolio.video.url }}" alt="image">
+                                        {% endif %}
+                                </td>
                                 <td>
                                     <div class="d-flex">
                                         <div class=" align-self-center d-m-success  mr-1 data-marker"></div>
-                                        <span class="label label-success">{{ service.status }}</span>
+                                        <span class="label label-success">{{ portfolio.status }}</span>
                                     </div>
                                 </td>
                                 <td class="text-center">
@@ -50,7 +55,7 @@
 <!--                                            <a class="dropdown-item" href="javascript:void(0);">View</a>-->
                                             <a class="dropdown-item" href="javascript:void(0);">Edit</a>
 <!--                                            <a class="dropdown-item" href="javascript:void(0);">View Response</a>-->
-                                            <a class="dropdown-item" href="{% url 'admin_panel.delete_service' service.id %}">Delete</a>
+                                            <a class="dropdown-item" href="{% url 'admin_panel.delete_portfolio' portfolio.id %}">Delete</a>
                                         </div>
                                     </div>
                                 </td>

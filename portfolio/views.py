@@ -22,6 +22,7 @@ def add_portfolio_info(request):
         short_description = portfolio_info.get('short_description')
         description = portfolio_info.get('description')
         image = request.FILES.get('image')
+        video = request.FILES.get('video')
         service_id = request.POST.get("service")
         service = Service.objects.get(id=service_id)
         link = portfolio_info.get('link')
@@ -31,6 +32,7 @@ def add_portfolio_info(request):
             short_description=short_description,
             description=description,
             image=image,
+            video=video,
             service=service,
             link=link,
         )
@@ -41,15 +43,18 @@ def add_portfolio_info(request):
 
 
 def all_portfolios(request):
-    services = Service.objects.all()
-    return render(request, 'admin_templates/services.html', {'services': services})
+    portfolios = Portfolio.objects.all()
+    return render(request, 'admin_templates/portfolios.html', {'portfolios': portfolios})
 
 
 def delete_portfolio(request, id):
-    service = get_object_or_404(Service, id=id)
-    if service.image and os.path.isfile(service.image.path):
-        os.remove(service.image.path)
-    service.delete()
-    messages.success(request, "Service deleted successfully.")
+    portfolio = get_object_or_404(Portfolio, id=id)
+    if portfolio.image and os.path.isfile(portfolio.image.path):
+        os.remove(portfolio.image.path)
+    if portfolio.video and os.path.isfile(portfolio.video.path):
+        os.remove(portfolio.video.path)
+    portfolio.delete()
+    messages.success(request, "Portfolio deleted successfully.")
     # return redirect('blog_post_detail', id=service.id)
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
