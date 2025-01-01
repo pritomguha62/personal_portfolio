@@ -7,7 +7,7 @@
         {% csrf_token %}
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Title</span>
-            <input type="text" name="title" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1">
+            <input type="text" name="title" required class="form-control" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1">
         </div>
 
         <div class="input-group mb-3">
@@ -43,12 +43,12 @@
 
         <div class="img-uploader-content mb-3">
             <span class="input-group">Image</span>
-            <input type="file" class="filepond form-control" name="image" accept="image/png, image/jpeg, image/gif"/>
+            <input type="file" class="filepond form-control" name="image"/>
         </div>
 
         <div class="video-uploader-content mb-3">
             <span class="input-group">Video</span>
-            <input type="file" class="filepond form-control" name="image" accept="image/png, image/jpeg, image/gif"/>
+            <input type="file" class="filepond form-control" name="video"/>
         </div>
 
 

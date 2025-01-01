@@ -325,49 +325,20 @@
                         {% for portfolio in portfolios %}
                             <div class="portfolio-item service{{ portfolio.service_id }}">
                             <div class="image-box">
+                            {% if portfolio.image %}
                                 <img width="377px" height="323px" src="{{ portfolio.image.url }}" alt="{{ portfolio.title }}" />
+                                {% else %}
+                                <img width="377px" height="323px" src="media/service_images/coming_soon.gif" alt="{{ portfolio.title }}" />
+                            {% endif %}
                             </div>
                             <div class="content-box">
                                 <h3 class="portfolio-title">{{ portfolio.title }}</h3>
                                 <p>Project was about precision and information.</p>
                                 <i class="flaticon-up-right-arrow"></i>
-                                <button data-mfp-src="#portfolio-wrapper" class="portfolio-link modal-popup"></button>
+                                <button data-mfp-src="#portfolio-wrapper{{ portfolio.id }}" class="portfolio-link modal-popup"></button>
                             </div>
                         </div>
                         {% endfor %}
-<!--                        <div class="portfolio-item uxui">-->
-<!--                            <div class="image-box">-->
-<!--                                <img src="images/1_1.jpg" alt="" />-->
-<!--                            </div>-->
-<!--                            <div class="content-box">-->
-<!--                                <h3 class="portfolio-title">New Age</h3>-->
-<!--                                <p>Project was about precision and information.</p>-->
-<!--                                <i class="flaticon-up-right-arrow"></i>-->
-<!--                                <button data-mfp-src="#portfolio-wrapper" class="portfolio-link modal-popup"></button>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="portfolio-item mobile-app">-->
-<!--                            <div class="image-box">-->
-<!--                                <img src="images/3.jpg" alt="" />-->
-<!--                            </div>-->
-<!--                            <div class="content-box">-->
-<!--                                <h3 class="portfolio-title">Sebastian</h3>-->
-<!--                                <p>Project was about precision and information.</p>-->
-<!--                                <i class="flaticon-up-right-arrow"></i>-->
-<!--                                <button data-mfp-src="#portfolio-wrapper" class="portfolio-link modal-popup"></button>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="portfolio-item branding">-->
-<!--                            <div class="image-box">-->
-<!--                                <img src="images/4.jpg" alt="" />-->
-<!--                            </div>-->
-<!--                            <div class="content-box">-->
-<!--                                <h3 class="portfolio-title">Mochnix</h3>-->
-<!--                                <p>Project was about precision and information.</p>-->
-<!--                                <i class="flaticon-up-right-arrow"></i>-->
-<!--                                <button data-mfp-src="#portfolio-wrapper" class="portfolio-link modal-popup"></button>-->
-<!--                            </div>-->
-<!--                        </div>-->
                     </div>
                 </div>
             </div>
@@ -376,118 +347,68 @@
     <!-- PORTFOLIO SECTION END -->
 
     <!-- start: Portfolio Popup -->
-    <div id="portfolio-wrapper" class="popup_content_area zoom-anim-dialog mfp-hide" data-lenis-prevent="">
+    {% for portfolio in portfolios %}
+        <div id="portfolio-wrapper{{ portfolio.id }}" class="popup_content_area zoom-anim-dialog mfp-hide" data-lenis-prevent="">
         <div class="popup_modal_img">
             <img src="images/modal-img_1.jpg" alt="" />
         </div>
         <div class="popup_modal_content">
             <div class="portfolio_info">
                 <div class="portfolio_info_text">
-                    <h2 class="title">DStudio</h2>
+                    <h2 class="title">{{ portfolio.title }}</h2>
+                    {% if portfolio.short_description %}
                     <div class="desc">
                         <p>
-                            They are was greater open above shelter lets itself under appear sixth open gathering made upon can't own above midst gathering gathered he one us saying can't divide.
+                            {{ portfolio.short_description }}
                         </p>
                     </div>
-                    <a href="#" class="btn tj-btn-primary">live preview <i class="fal fa-arrow-right"></i></a>
+                    {% endif %}
+                    {% if portfolio.link %}
+
+                        <a href="{{ portfolio.link }}" class="btn tj-btn-primary">live preview <i class="fal fa-arrow-right"></i></a>
+
+                    {% endif %}
                 </div>
                 <div class="portfolio_info_items">
                     <div class="info_item">
                         <div class="key">Category</div>
-                        <div class="value">Web Design</div>
+                        <div class="value">{{ portfolio.service.title }}</div>
                     </div>
                     <div class="info_item">
                         <div class="key">Client</div>
-                        <div class="value">Artboard Studio</div>
+                        <div class="value">Untitled</div>
                     </div>
                     <div class="info_item">
-                        <div class="key">Start Date</div>
-                        <div class="value">August 20, 2023</div>
+                        <div class="key">Upload Date</div>
+                        <div class="value">{{ portfolio.created_at }}</div>
                     </div>
                     <div class="info_item">
-                        <div class="key">Designer</div>
-                        <div class="value"><a href="#">ThemeJunction</a></div>
+                        <div class="key">Developer</div>
+                        <div class="value"><a href="#">Pritom GK</a></div>
                     </div>
                 </div>
             </div>
-            <div class="portfolio_gallery owl-carousel">
-                <div class="gallery_item">
-                    <img src="images/p-gallery-1.jpg" alt="" />
-                </div>
-                <div class="gallery_item">
-                    <img src="images/p-gallery-2.jpg" alt="" />
-                </div>
-                <div class="gallery_item">
-                    <img src="images/p-gallery-3.jpg" alt="" />
-                </div>
-                <div class="gallery_item">
-                    <img src="images/p-gallery-4.jpg" alt="" />
-                </div>
-            </div>
+            {% if portfolio.description %}
             <div class="portfolio_description">
                 <h2 class="title">Project Description</h2>
                 <div class="desc">
-                    <p>
-                        The goal is there are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly
-                        believable.
-                    </p>
-
-                    <p>
-                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If
-                        you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
-                    </p>
+                    {{ portfolio.description }}
                 </div>
             </div>
-            <div class="portfolio_story_approach">
-                <div class="portfolio_story">
-                    <div class="story_title">
-                        <h4 class="title">The story</h4>
-                    </div>
-                    <div class="story_content">
-                        <p>
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                            If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. There are many variations of passages of Lorem Ipsum available, but
-                            the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure
-                            there isn't anything embarrassing hidden in the middle of text.
-                        </p>
-                    </div>
-                </div>
-                <div class="portfolio_approach">
-                    <div class="approach_title">
-                        <h4 class="title">OUR APPROACH</h4>
-                    </div>
-                    <div class="approach_content">
-                        <p>
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                            If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. There are many variations of passages of Lorem Ipsum available, but
-                            the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure
-                            there isn't anything embarrassing hidden in the middle of text.
-                        </p>
+            {% endif %}
+            {% if portfolio.video %}
+            <div class="portfolio_description">
+                <h2 class="title">Project Preview</h2>
+                <div class="desc">
+                    <div class="col-md-10 container-fluid text-center">
+                      <video controls class="col-md-4 video_frame" src="{{ portfolio.video.url }}"></video>
                     </div>
                 </div>
             </div>
-            <div class="portfolio_navigation">
-                <div class="navigation_item prev-project">
-                    <a href="#" class="project">
-                        <i class="fal fa-arrow-left"></i>
-                        <div class="nav_project">
-                            <div class="label">Previous Project</div>
-                            <h3 class="title">Sebastian</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="navigation_item next-project">
-                    <a href="#" class="project">
-                        <div class="nav_project">
-                            <div class="label">Next Project</div>
-                            <h3 class="title">Qwillo</h3>
-                        </div>
-                        <i class="fal fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
+            {% endif %}
         </div>
     </div>
+    {% endfor %}
     <!-- end: Portfolio Popup -->
 
     <!-- RESUME SECTION START -->
@@ -1067,6 +988,45 @@
         </div>
     </section>
     <!-- CONTACT SECTION END -->
+
+<!-- JavaScript to Stop Video -->
+<!-- JavaScript to Stop Videos -->
+<script>
+
+
+    // Select all modals with the class "video-modal"
+    const modals = document.querySelectorAll(".popup_content_area");
+
+
+
+
+    // Loop through each button and add a click event listener
+    modals.forEach(modal => {
+        // alert(button+`${this.textContent}`);
+        document.addEventListener('click', function(event) {
+            // Select all elements with the class 'alert-btn'
+            const isClickInside = modal.contains(event.target);
+            const button = modal.querySelector('.mfp-close');
+            const videoElement = modal.querySelector(".video_frame");
+            if (!isClickInside) {
+                videoElement.pause();
+                videoElement.currentTime = 0;
+              }
+
+        });
+
+    });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const videoElements = document.querySelectorAll(".video_frame");
+        videoElements.forEach((video) => {
+          // Remove the autoplay attribute
+          video.removeAttribute("autoplay");
+        });
+    });
+</script>
 
 {% endblock %}
             
