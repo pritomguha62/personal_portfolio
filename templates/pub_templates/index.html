@@ -906,7 +906,7 @@
                                 <div class="row gx-3">
                                     <div class="col-sm-12">
                                         <div class="form_group">
-                                            <input type="text" name="name" id="conName" placeholder="First name" autocomplete="off" />
+                                            <input type="text" name="name" id="conName" placeholder="Name" autocomplete="off" />
                                         </div>
                                     </div>
 <!--                                    <div class="col-sm-6">-->
@@ -928,10 +928,10 @@
                                         <div class="form_group">
                                             <select name="conService" id="conService" class="tj-nice-select">
                                                 <option value="" selected="" disabled="">Choose Service</option>
-                                                <option value="braning">Branding Design</option>
                                                 {% for service in services %}
                                                     <option value="{{ service.title }}">{{ service.title }}</option>
                                                 {% endfor %}
+<!--                                                <option value="braning">Branding Design</option>-->
 <!--                                                <option value="web">Web Design</option>-->
 <!--                                                <option value="uxui">UI/UX Design</option>-->
 <!--                                                <option value="app">App Design</option>-->
