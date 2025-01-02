@@ -1,5 +1,7 @@
 {% extends 'pub_templates/layouts/base.html' %}
 
+{% load static %}
+
 {% block content %}
     <!-- HERO SECTION START -->
     <section class="hero-section d-flex align-items-center" id="intro">
@@ -12,33 +14,33 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="hero-content-box">
-                        <span class="hero-sub-title">I am Gerold</span>
+                        <span class="hero-sub-title">I am Pritom GK</span>
                         <h1 class="hero-title">
                             Web Developer +<br />
-                            UX Designer
+                            Programmer
                         </h1>
 
                         <div class="hero-image-box d-md-none text-center">
-                            <img src="images/me.png" alt="" />
+                            <img src="{%static 'pub_assets/images/logo.jpg' %}" alt="Pritom GK, Backend Developer specializing in Laravel and Django" />
                         </div>
 
                         <p class="lead">
-                            I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people
+                            Specialized in Backend Development with Laravel and Django
                         </p>
                         <div class="button-box d-flex flex-wrap align-items-center">
-                            <a href="#" class="btn tj-btn-secondary">Download CV <i class="flaticon-download"></i></a>
+                            <a href="{%static 'pub_assets/others/pritom_gk_resume.pdf' %}" download="" class="btn tj-btn-secondary">Download CV <i class="flaticon-download"></i></a>
                             <ul class="ul-reset social-icons">
                                 <li>
-                                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                    <a target="_blank" href="https://x.com/pritom_gk"><i class="fa-brands fa-x-twitter"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa-light fa-basketball"></i></a>
+                                    <a target="_blank" href="https://www.linkedin.com/in/pritomgk/"><i class="fa-brands fa-linkedin-in"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    <a target="_blank" href="#"><i class="fa-light fa-facebook"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                                    <a target="_blank" href="https://github.com/pritomgk"><i class="fa-brands fa-github"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -46,7 +48,7 @@
                 </div>
                 <div class="col-md-6 d-none d-md-block">
                     <div class="hero-image-box text-center">
-                        <img src="images/me.png" alt="" />
+                        <img src="{%static 'pub_assets/images/logo.jpg' %}" alt="Pritom GK, Backend Developer specializing in Laravel and Django" />
                     </div>
                 </div>
             </div>
@@ -98,7 +100,7 @@
     <section class="services-section" id="services-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" id="services">
                     <div class="section-header text-center">
                         <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">My Quality Services</h2>
                         <p class="wow fadeInUp" data-wow-delay=".4s">
@@ -294,7 +296,7 @@
     <section class="portfolio-section" id="works-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" id="portfolios">
                     <div class="section-header text-center">
                         <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">My Recent Works</h2>
                         <p class="wow fadeInUp" data-wow-delay=".4s">
@@ -400,7 +402,7 @@
             <div class="portfolio_description">
                 <h2 class="title">Project Preview</h2>
                 <div class="desc">
-                    <div class="col-md-10 container-fluid text-center">
+                    <div class="col-md-10 portfolio_video container-fluid text-center">
                       <video controls class="col-md-4 video_frame" src="{{ portfolio.video.url }}"></video>
                     </div>
                 </div>
@@ -415,7 +417,7 @@
     <section class="resume-section" id="resume-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" id="about">
                     <div class="section-header wow fadeInUp" data-wow-delay=".3s">
                         <h2 class="section-title"><i class="flaticon-recommendation"></i> My Experience</h2>
                     </div>
@@ -814,7 +816,7 @@
     <section class="blog-section" id="blog-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" id="blogs">
                     <div class="section-header text-center">
                         <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Recent Blogs</h2>
                         <p class="wow fadeInUp" data-wow-delay=".4s">
@@ -891,7 +893,7 @@
     <section class="contact-section" id="contact-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-7 order-2 order-md-1">
+                <div class="col-lg-6 col-md-7 order-2 order-md-1" id="contact">
                     <div class="contact-form-box wow fadeInLeft" data-wow-delay=".3s">
                         <div class="section-header">
                             <h2 class="section-title">Let’s work together!</h2>
@@ -899,26 +901,27 @@
                         </div>
 
                         <div class="tj-contact-form">
-                            <form id="contact-form">
+                            <form method="post" enctype="multipart/form-data" action="" id="">
+                                {% csrf_token %}
                                 <div class="row gx-3">
+                                    <div class="col-sm-12">
+                                        <div class="form_group">
+                                            <input type="text" name="name" id="conName" placeholder="First name" autocomplete="off" />
+                                        </div>
+                                    </div>
+<!--                                    <div class="col-sm-6">-->
+<!--                                        <div class="form_group">-->
+<!--                                            <input type="text" name="conLName" id="conLName" placeholder="Last name" autocomplete="off" />-->
+<!--                                        </div>-->
+<!--                                    </div>-->
                                     <div class="col-sm-6">
                                         <div class="form_group">
-                                            <input type="text" name="conName" id="conName" placeholder="First name" autocomplete="off" />
+                                            <input type="email" name="email" id="conEmail" placeholder="Email address" autocomplete="off" />
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form_group">
-                                            <input type="text" name="conLName" id="conLName" placeholder="Last name" autocomplete="off" />
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form_group">
-                                            <input type="email" name="conEmail" id="conEmail" placeholder="Email address" autocomplete="off" />
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form_group">
-                                            <input type="tel" name="conPhone" id="conPhone" placeholder="Phone number" autocomplete="off" />
+                                            <input type="tel" name="phone" id="conPhone" placeholder="Phone number" autocomplete="off" />
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -926,15 +929,18 @@
                                             <select name="conService" id="conService" class="tj-nice-select">
                                                 <option value="" selected="" disabled="">Choose Service</option>
                                                 <option value="braning">Branding Design</option>
-                                                <option value="web">Web Design</option>
-                                                <option value="uxui">UI/UX Design</option>
-                                                <option value="app">App Design</option>
+                                                {% for service in services %}
+                                                    <option value="{{ service.title }}">{{ service.title }}</option>
+                                                {% endfor %}
+<!--                                                <option value="web">Web Design</option>-->
+<!--                                                <option value="uxui">UI/UX Design</option>-->
+<!--                                                <option value="app">App Design</option>-->
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form_group">
-                                            <textarea name="conMessage" id="conMessage" placeholder="Message"></textarea>
+                                            <textarea name="message" id="conMessage" placeholder="Message"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -995,7 +1001,7 @@
 
 
     // Select all modals with the class "video-modal"
-    const modals = document.querySelectorAll(".popup_content_area");
+    const modals = document.querySelectorAll(".portfolio_video");
 
 
 

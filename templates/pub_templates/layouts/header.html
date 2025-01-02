@@ -5,14 +5,43 @@
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="" />
 
-        <!-- Site Title -->
-        <title>Gerold - Personal Portfolio</title>
+        <!-- SEO Meta Tags -->
+        <title>Pritom GK | Backend Web Developer (Laravel & Django)</title>
+        <meta name="description" content="Explore the portfolio of Pritom GK, a backend web developer specializing in Laravel and Django. Learn about his expertise, projects, and services in backend development.">
+        <meta name="keywords" content="Backend developer, Laravel web developer, Django web developer, backend development, full-stack developer, RESTful APIs, web application development">
+        <meta name="author" content="Pritom GK">
+        <meta name="robots" content="index, follow">
+    
+        <!-- Open Graph Meta Tags (Social Media Optimization) -->
+        <meta property="og:title" content="Pritom GK | Backend Web Developer (Laravel & Django)">
+        <meta property="og:description" content="Explore the portfolio of Pritom GK, a backend web developer specializing in Laravel and Django. Learn about his expertise, projects, and services in backend development.">
+        <meta property="og:image" content="{%static 'pub_assets/images/logo.jpg' %}">
+        <meta property="og:url" content="https://pritomgk.techpartit.net">
+        <meta property="og:type" content="website">
+    
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Pritom GK | Backend Web Developer (Laravel & Django)">
+        <meta name="twitter:description" content="Explore the portfolio of Pritom GK, a backend web developer specializing in Laravel and Django. Learn about his expertise, projects, and services in backend development.">
+        <meta name="twitter:image" content="{%static 'pub_assets/images/logo.jpg' %}">
+    
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://pritomgk.techpartit.net">
+    
+        <!-- Favicon -->
+        <link rel="icon" href="{%static 'pub_assets/images/favicon.ico' %}" type="image/x-icon">
+    
+        <!-- Theme Color for Mobile -->
+        <meta name="theme-color" content="#333333">
+    
+        <!-- Apple-Specific Meta Tags -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
         <!-- Place favicon.ico in the root directory -->
-        {% comment %} <link rel="apple-touch-icon" href="{%static images/favicon.png %}" />
-        <link rel="shortcut icon" type="image/png" href="{%static images/favicon.png %}" /> {% endcomment %}
+        <link rel="apple-touch-icon" href="{%static 'pub_assets/images/apple-touch-icon.png' %}" />
+        <link rel="shortcut icon" type="image/png" href="{%static 'pub_assets/images/favicon.png' %}" />
 
         <!-- CSS here -->
         <link rel="stylesheet" href="{%static 'pub_assets/css/animate.min.css' %}" />
@@ -67,78 +96,80 @@
                     <div class="col-12 d-flex flex-wrap align-items-center">
                         <div class="logo-box">
                             <a href="index.html">
-                                <img src="images/logo.png" alt="" />
+                                <img src="{%static 'pub_assets/images/logo.jpg' %}" alt="" />
                             </a>
                         </div>
 
                         <div class="header-info-list d-none d-md-inline-block">
                             <ul class="ul-reset">
-                                <li><a href="mailto:mail@gerolddesign.com">mail@gerolddesign.com</a></li>
+                                <li><a href="mailto:gkpritom@gmail.com">gkpritom@gmail.com</a></li>
                             </ul>
                         </div>
                         <div class="header-menu" id="headerMenu">
                             <nav>
                                 <ul>
-                                    <li class="has-dropdown current-menu-ancestor">
-                                        <a class="current-menu-item" href="index.html">Home</a>
-                                        <ul class="sub-menu">
-                                            <li class="has-dropdown current-menu-ancestor">
-                                                <a href="index.html">Dark Mode</a>
-                                                <ul class="sub-menu">
-                                                    <li class="current-menu-item">
-                                                        <a href="index.html">Home One</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-2.html">Home Two</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-3.html">Home Three</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-4.html">Home Four</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="has-dropdown">
-                                                <a href="index-light.html">Light Mode</a>
-                                                <ul class="sub-menu">
-                                                    <li>
-                                                        <a href="index-light.html">Home One</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-2-light.html">Home Two</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-3-light.html">Home Three</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-4-light.html">Home Four</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="services.html">Services</a></li>
-                                    <li><a href="portfolio.html">Portfolios</a></li>
-                                    <li class="has-dropdown">
-                                        <a href="blog.html">Blog</a>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="blog.html">Blog</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog-details.html">Blog Details</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>
+<!--                                    <li class="has-dropdown current-menu-ancestor">-->
+<!--                                        <a class="current-menu-item" href="{% url 'home' %}">Home</a>-->
+<!--                                        <ul class="sub-menu">-->
+<!--                                            <li class="has-dropdown current-menu-ancestor">-->
+<!--                                                <a href="index.html">Dark Mode</a>-->
+<!--                                                <ul class="sub-menu">-->
+<!--                                                    <li class="current-menu-item">-->
+<!--                                                        <a href="index.html">Home One</a>-->
+<!--                                                    </li>-->
+<!--                                                    <li>-->
+<!--                                                        <a href="index-2.html">Home Two</a>-->
+<!--                                                    </li>-->
+<!--                                                    <li>-->
+<!--                                                        <a href="index-3.html">Home Three</a>-->
+<!--                                                    </li>-->
+<!--                                                    <li>-->
+<!--                                                        <a href="index-4.html">Home Four</a>-->
+<!--                                                    </li>-->
+<!--                                                </ul>-->
+<!--                                            </li>-->
+<!--                                            <li class="has-dropdown">-->
+<!--                                                <a href="index-light.html">Light Mode</a>-->
+<!--                                                <ul class="sub-menu">-->
+<!--                                                    <li>-->
+<!--                                                        <a href="index-light.html">Home One</a>-->
+<!--                                                    </li>-->
+<!--                                                    <li>-->
+<!--                                                        <a href="index-2-light.html">Home Two</a>-->
+<!--                                                    </li>-->
+<!--                                                    <li>-->
+<!--                                                        <a href="index-3-light.html">Home Three</a>-->
+<!--                                                    </li>-->
+<!--                                                    <li>-->
+<!--                                                        <a href="index-4-light.html">Home Four</a>-->
+<!--                                                    </li>-->
+<!--                                                </ul>-->
+<!--                                            </li>-->
+<!--                                        </ul>-->
+<!--                                    </li>-->
+                                    <li><a href="{% url 'home' %}">Home</a></li>
+                                    <li><a href="#about">About</a></li>
+                                    <li><a href="#services">Services</a></li>
+                                    <li><a href="#portfolios">Portfolios</a></li>
+                                    <li><a href="#blogs">Blogs</a></li>
+<!--                                    <li class="has-dropdown">-->
+<!--                                        <a href="blog.html">Blog</a>-->
+<!--                                        <ul class="sub-menu">-->
+<!--                                            <li>-->
+<!--                                                <a href="blog.html">Blog</a>-->
+<!--                                            </li>-->
+<!--                                            <li>-->
+<!--                                                <a href="blog-details.html">Blog Details</a>-->
+<!--                                            </li>-->
+<!--                                        </ul>-->
+<!--                                    </li>-->
+                                    <li><a href="#contact">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>
                         <div class="mobile-menu d-lg-none"></div>
                         <div class="header-button">
-                            <a href="#" class="btn tj-btn-primary">Hire me!</a>
+                            <a href="#contact" class="btn tj-btn-primary">Hire me!</a>
                         </div>
                         <div class="menu-bar d-lg-none">
                             <button>
@@ -169,66 +200,68 @@
                         <div class="header-menu">
                             <nav>
                                 <ul>
-                                    <li class="has-dropdown current-menu-ancestor">
-                                        <a class="current-menu-item" href="index.html">Home</a>
-                                        <ul class="sub-menu">
-                                            <li class="has-dropdown current-menu-ancestor">
-                                                <a href="index.html">Dark Mode</a>
-                                                <ul class="sub-menu">
-                                                    <li class="current-menu-item">
-                                                        <a href="index.html">Home One</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-2.html">Home Two</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-3.html">Home Three</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-3.html">Home Four</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="has-dropdown">
-                                                <a href="index-light.html">Light Mode</a>
-                                                <ul class="sub-menu">
-                                                    <li>
-                                                        <a href="index-light.html">Home One</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-2-light.html">Home Two</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-3-light.html">Home Three</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-3-light.html">Home Four</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="services.html">Services</a></li>
-                                    <li><a href="portfolio.html">Portfolios</a></li>
-                                    <li class="has-dropdown">
-                                        <a href="blog.html">Blog</a>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="blog.html">Blog</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog-details.html">Blog Details</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>
+<!--                                    <li class="has-dropdown current-menu-ancestor">-->
+<!--                                        <a class="current-menu-item" href="{% url 'home' %}">Home</a>-->
+<!--                                        <ul class="sub-menu">-->
+<!--                                            <li class="has-dropdown current-menu-ancestor">-->
+<!--                                                <a href="index.html">Dark Mode</a>-->
+<!--                                                <ul class="sub-menu">-->
+<!--                                                    <li class="current-menu-item">-->
+<!--                                                        <a href="index.html">Home One</a>-->
+<!--                                                    </li>-->
+<!--                                                    <li>-->
+<!--                                                        <a href="index-2.html">Home Two</a>-->
+<!--                                                    </li>-->
+<!--                                                    <li>-->
+<!--                                                        <a href="index-3.html">Home Three</a>-->
+<!--                                                    </li>-->
+<!--                                                    <li>-->
+<!--                                                        <a href="index-4.html">Home Four</a>-->
+<!--                                                    </li>-->
+<!--                                                </ul>-->
+<!--                                            </li>-->
+<!--                                            <li class="has-dropdown">-->
+<!--                                                <a href="index-light.html">Light Mode</a>-->
+<!--                                                <ul class="sub-menu">-->
+<!--                                                    <li>-->
+<!--                                                        <a href="index-light.html">Home One</a>-->
+<!--                                                    </li>-->
+<!--                                                    <li>-->
+<!--                                                        <a href="index-2-light.html">Home Two</a>-->
+<!--                                                    </li>-->
+<!--                                                    <li>-->
+<!--                                                        <a href="index-3-light.html">Home Three</a>-->
+<!--                                                    </li>-->
+<!--                                                    <li>-->
+<!--                                                        <a href="index-4-light.html">Home Four</a>-->
+<!--                                                    </li>-->
+<!--                                                </ul>-->
+<!--                                            </li>-->
+<!--                                        </ul>-->
+<!--                                    </li>-->
+                                    <li><a href="{% url 'home' %}">Home</a></li>
+                                    <li><a href="#about">About</a></li>
+                                    <li><a href="#services">Services</a></li>
+                                    <li><a href="#portfolios">Portfolios</a></li>
+                                    <li><a href="#blogs">Blogs</a></li>
+<!--                                    <li class="has-dropdown">-->
+<!--                                        <a href="blog.html">Blog</a>-->
+<!--                                        <ul class="sub-menu">-->
+<!--                                            <li>-->
+<!--                                                <a href="blog.html">Blog</a>-->
+<!--                                            </li>-->
+<!--                                            <li>-->
+<!--                                                <a href="blog-details.html">Blog Details</a>-->
+<!--                                            </li>-->
+<!--                                        </ul>-->
+<!--                                    </li>-->
+                                    <li><a href="#contact">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>
                         <div class="mobile-menu d-lg-none"></div>
                         <div class="header-button">
-                            <a href="#" class="btn tj-btn-primary">Hire me!</a>
+                            <a href="#contact" class="btn tj-btn-primary">Hire me!</a>
                         </div>
                         <div class="menu-bar d-lg-none">
                             <button>
