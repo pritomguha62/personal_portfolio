@@ -13,6 +13,7 @@ class CustomAdmin(AbstractUser):
     address = models.TextField(blank=True, null=True)
     user_bio = models.CharField(max_length=50)
     profile_image = models.ImageField(upload_to="profile_image")
+    face_image = models.ImageField(upload_to="face_image")
     # user_type = models.CharField(max_length=10, choices=(('admin', 'Admin'), ('staff', 'Staff'), ('user', 'User')), default='user') 
     
     USERNAME_FIELD = 'email'

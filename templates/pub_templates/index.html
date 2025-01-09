@@ -12,7 +12,7 @@
         </div>
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="hero-content-box">
                         <span class="hero-sub-title">I am Pritom GK</span>
                         <h1 class="hero-title">
@@ -28,7 +28,7 @@
                             Specialized in Backend Development with Laravel and Django
                         </p>
                         <div class="button-box d-flex flex-wrap align-items-center">
-                            <a href="{%static 'pub_assets/others/pritom_gk_resume.pdf' %}" download="" class="btn tj-btn-secondary">Download CV <i class="flaticon-download"></i></a>
+                            <a href="{%static 'pub_assets/others/pritom_gk_resume.pdf' %}" download="" class="btn tj-btn-secondary">Download Resume <i class="flaticon-download"></i></a>
                             <ul class="ul-reset social-icons">
                                 <li>
                                     <a target="_blank" href="https://x.com/pritom_gk"><i class="fa-brands fa-x-twitter"></i></a>
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 d-none d-md-block">
+                <div class="col-md-4 d-none d-md-block">
                     <div class="hero-image-box text-center">
                         <img src="{%static 'pub_assets/images/logo.jpg' %}" alt="Pritom GK, Backend Developer specializing in Laravel and Django" />
                     </div>
@@ -56,7 +56,7 @@
                 <div class="row">
                     <div class="col-6 col-lg-3">
                         <div class="funfact-item d-flex flex-column flex-sm-row flex-wrap align-items-center">
-                            <div class="number"><span class="odometer" data-count="14">0</span></div>
+                            <div class="number"><span class="odometer" data-count="8">0</span></div>
                             <div class="text">
                                 Years of <br />
                                 Experience
@@ -74,7 +74,7 @@
                     </div>
                     <div class="col-6 col-lg-3">
                         <div class="funfact-item d-flex flex-column flex-sm-row flex-wrap align-items-center">
-                            <div class="number"><span class="odometer" data-count="1.5">0</span>K</div>
+                            <div class="number"><span class="odometer" data-count="388">0</span></div>
                             <div class="text">
                                 Happy <br />
                                 Clients
@@ -83,7 +83,7 @@
                     </div>
                     <div class="col-6 col-lg-3">
                         <div class="funfact-item d-flex flex-column flex-sm-row flex-wrap align-items-center">
-                            <div class="number"><span class="odometer" data-count="14">0</span></div>
+                            <div class="number"><span class="odometer" data-count="8">0</span></div>
                             <div class="text">
                                 Years of <br />
                                 Experience
@@ -179,116 +179,109 @@
 
     {% for service in services %}
         <div id="service-wrapper{{ forloop.counter }}" class="popup_content_area zoom-anim-dialog mfp-hide" data-lenis-prevent="">
-        <div class="popup_modal_img">
-            <img src="images/modal-img.jpg" alt="" />
-        </div>
-        <div class="popup_modal_content">
-            <div class="service_details">
-                <div class="row">
-                    <div class="col-lg-7 col-xl-8">
-                        <div class="service_details_content">
-                            <div class="service_info">
-                                <h6 class="subtitle">SERVICES</h6>
-                                <h2 class="title">{{ service.title }}</h2>
-                                <div class="desc">
-                                    <p>
-                                        Elizabeth some dodgy chavs are you taking the piss faff about pardon amongst car boot a load of old tosh is cracking goal blow off telling brown.
-                                    </p>
+            <div class="popup_modal_img">
+                <img src="images/modal-img.jpg" alt="" />
+            </div>
+            <div class="popup_modal_content">
+                <div class="service_details">
+                    <div class="row">
+                        <div class="col-lg-12 col-xl-12">
+                            <div class="service_details_content">
+                                <div class="service_info">
+                                    <h6 class="subtitle">SERVICES</h6>
+                                    <h2 class="title">{{ service.title }}</h2>
+                                    <div class="desc text-center">
+                                            {% if service.image %}
+                                                <img style="max-width: 100%; max-height: 100%" src="{{ service.image.url }}" alt="image">
+                                            {% endif %}
+                                        <p>
+                                            {{ service.description }}
+                                        </p>
+                                    </div>
 
-                                    <p>
-                                        Brolly show off show off pick your nose and blow off well A bit of how’s your father tomfoolery blimey, me old mucker starkers Queen’s English dropped a clanger bite your arm spiffing good
-                                        time burke Why chancer. Hotpot bum bag cracking goal young delinquent naff bugger cup of chars bender loo it’s all gone to pot the nancy cheeky.
-                                    </p>
-
-                                    <p>
-                                        At public school cras bog some dodgy chav Richard Why argy bargy vagabon William bender matie boy, off his nut chancer Jeffrey up the kyver say mufty you mug ummm telling pear shaped Oxford
-                                        owt to do with me do one so said are you taking his.
-                                    </p>
+    <!--                                <h3 class="title">Services Process</h3>-->
+    <!--                                <div class="desc">-->
+    <!--                                    <p>-->
+    <!--                                        Elizabeth some dodgy chavs are you taking the piss faff about pardon amongst car boot a load of old tosh is cracking goal blow off telling brown.-->
+    <!--                                    </p>-->
+    <!--                                </div>-->
+    <!--                                <ul>-->
+    <!--                                    <li>Reinvent Your Business to Better</li>-->
+    <!--                                    <li>Pioneering the Internet's First</li>-->
+    <!--                                    <li>Pioneering the Design World's First</li>-->
+    <!--                                    <li>Pioneering the Design World's First</li>-->
+    <!--                                    <li>Pioneering the Design World's First</li>-->
+    <!--                                    <li>Pioneering the Design World's First</li>-->
+    <!--                                </ul>-->
                                 </div>
-
-                                <h3 class="title">Services Process</h3>
-                                <div class="desc">
-                                    <p>
-                                        Elizabeth some dodgy chavs are you taking the piss faff about pardon amongst car boot a load of old tosh is cracking goal blow off telling brown.
-                                    </p>
-                                </div>
-                                <ul>
-                                    <li>Reinvent Your Business to Better</li>
-                                    <li>Pioneering the Internet's First</li>
-                                    <li>Pioneering the Design World's First</li>
-                                    <li>Pioneering the Design World's First</li>
-                                    <li>Pioneering the Design World's First</li>
-                                    <li>Pioneering the Design World's First</li>
-                                </ul>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-5 col-xl-4">
-                        <div class="tj_main_sidebar">
-                            <div class="sidebar_widget services_list">
-                                <div class="widget_title">
-                                    <h3 class="title">All Services</h3>
-                                </div>
-                                <ul>
-                                    <li class="active">
-                                        <button>
-                                            <i class="flaticon-design"></i>
-                                            Branding Design
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button>
-                                            <i class="flaticon-3d-movie"></i>
-                                            3D Animation
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button>
-                                            <i class="flaticon-ux-design"></i>
-                                            UI/UX Design
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button>
-                                            <i class="flaticon-web-design"></i>
-                                            Web Design
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button>
-                                            <i class="flaticon-ui-design"></i>
-                                            App Design
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
+    <!--                    <div class="col-lg-5 col-xl-4">-->
+    <!--                        <div class="tj_main_sidebar">-->
+    <!--                            <div class="sidebar_widget services_list">-->
+    <!--                                <div class="widget_title">-->
+    <!--                                    <h3 class="title">All Services</h3>-->
+    <!--                                </div>-->
+    <!--                                <ul>-->
+    <!--                                    <li class="active">-->
+    <!--                                        <button>-->
+    <!--                                            <i class="flaticon-design"></i>-->
+    <!--                                            Branding Design-->
+    <!--                                        </button>-->
+    <!--                                    </li>-->
+    <!--                                    <li>-->
+    <!--                                        <button>-->
+    <!--                                            <i class="flaticon-3d-movie"></i>-->
+    <!--                                            3D Animation-->
+    <!--                                        </button>-->
+    <!--                                    </li>-->
+    <!--                                    <li>-->
+    <!--                                        <button>-->
+    <!--                                            <i class="flaticon-ux-design"></i>-->
+    <!--                                            UI/UX Design-->
+    <!--                                        </button>-->
+    <!--                                    </li>-->
+    <!--                                    <li>-->
+    <!--                                        <button>-->
+    <!--                                            <i class="flaticon-web-design"></i>-->
+    <!--                                            Web Design-->
+    <!--                                        </button>-->
+    <!--                                    </li>-->
+    <!--                                    <li>-->
+    <!--                                        <button>-->
+    <!--                                            <i class="flaticon-ui-design"></i>-->
+    <!--                                            App Design-->
+    <!--                                        </button>-->
+    <!--                                    </li>-->
+    <!--                                </ul>-->
+    <!--                            </div>-->
 
-                            <div class="sidebar_widget contact_form">
-                                <div class="widget_title">
-                                    <h3 class="title">Get in Touch</h3>
-                                </div>
+    <!--                            <div class="sidebar_widget contact_form">-->
+    <!--                                <div class="widget_title">-->
+    <!--                                    <h3 class="title">Get in Touch</h3>-->
+    <!--                                </div>-->
 
-                                <form action="index.html">
-                                    <div class="form_group">
-                                        <input type="text" name="name" id="name" placeholder="Name" autocomplete="off" />
-                                    </div>
-                                    <div class="form_group">
-                                        <input type="email" name="semail" id="semail" placeholder="Email" autocomplete="off" />
-                                    </div>
-                                    <div class="form_group">
-                                        <textarea name="smessage" id="smessage" placeholder="Your message" autocomplete="off"></textarea>
-                                    </div>
-                                    <div class="form_btn">
-                                        <button class="btn tj-btn-primary" type="submit">Send Message</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+    <!--                                <form action="{% url 'home' %}">-->
+    <!--                                    <div class="form_group">-->
+    <!--                                        <input type="text" name="name" id="name" placeholder="Name" autocomplete="off" />-->
+    <!--                                    </div>-->
+    <!--                                    <div class="form_group">-->
+    <!--                                        <input type="email" name="semail" id="semail" placeholder="Email" autocomplete="off" />-->
+    <!--                                    </div>-->
+    <!--                                    <div class="form_group">-->
+    <!--                                        <textarea name="smessage" id="smessage" placeholder="Your message" autocomplete="off"></textarea>-->
+    <!--                                    </div>-->
+    <!--                                    <div class="form_btn">-->
+    <!--                                        <button class="btn tj-btn-primary" type="submit">Send Message</button>-->
+    <!--                                    </div>-->
+    <!--                                </form>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     {% endfor %}
     <!-- end: Service Popup -->
 
@@ -367,7 +360,7 @@
                     {% endif %}
                     {% if portfolio.link %}
 
-                        <a href="{{ portfolio.link }}" class="btn tj-btn-primary">live preview <i class="fal fa-arrow-right"></i></a>
+                        <a href="{{ portfolio.link }}" target="_blank" class="btn tj-btn-primary">live preview <i class="fal fa-arrow-right"></i></a>
 
                     {% endif %}
                 </div>
@@ -425,24 +418,24 @@
                     <div class="resume-widget">
                         <div class="resume-item wow fadeInLeft" data-wow-delay=".4s">
                             <div class="time">2022 - Present</div>
-                            <h3 class="resume-title">Lead Developer</h3>
-                            <div class="institute">Blockdots, London</div>
+                            <h3 class="resume-title">Co-founder</h3>
+                            <div class="institute">Techpart IT, Tangail</div>
                         </div>
                         <div class="resume-item wow fadeInLeft" data-wow-delay=".5s">
-                            <div class="time">2021 - 2022</div>
-                            <h3 class="resume-title">Full Stack Web Developer</h3>
-                            <div class="institute">Parsons, The New School</div>
+                            <div class="time">2020 - 2022</div>
+                            <h3 class="resume-title">Backend Web Developer</h3>
+                            <div class="institute">Holy IT, Mymensingh</div>
                         </div>
-                        <div class="resume-item wow fadeInLeft" data-wow-delay=".6s">
-                            <div class="time">2020 - 2021</div>
-                            <h3 class="resume-title">UI Designer</h3>
-                            <div class="institute">House of Life, Leeds</div>
-                        </div>
-                        <div class="resume-item wow fadeInLeft" data-wow-delay=".7s">
-                            <div class="time">2018 - 2020</div>
-                            <h3 class="resume-title">Junior Graphics Designer</h3>
-                            <div class="institute">Theme Junction, Bursa</div>
-                        </div>
+<!--                        <div class="resume-item wow fadeInLeft" data-wow-delay=".6s">-->
+<!--                            <div class="time">2020 - 2021</div>-->
+<!--                            <h3 class="resume-title">UI Designer</h3>-->
+<!--                            <div class="institute">House of Life, Leeds</div>-->
+<!--                        </div>-->
+<!--                        <div class="resume-item wow fadeInLeft" data-wow-delay=".7s">-->
+<!--                            <div class="time">2018 - 2020</div>-->
+<!--                            <h3 class="resume-title">Junior Graphics Designer</h3>-->
+<!--                            <div class="institute">Theme Junction, Bursa</div>-->
+<!--                        </div>-->
                     </div>
                 </div>
 
@@ -453,25 +446,25 @@
 
                     <div class="resume-widget">
                         <div class="resume-item wow fadeInRight" data-wow-delay=".5s">
-                            <div class="time">2020 - 2023</div>
-                            <h3 class="resume-title">Programming course</h3>
-                            <div class="institute">Harverd University</div>
+                            <div class="time">2020 - Present</div>
+                            <h3 class="resume-title">Diploma in Agriculture</h3>
+                            <div class="institute">ATI, Sherpur</div>
                         </div>
                         <div class="resume-item wow fadeInRight" data-wow-delay=".6s">
-                            <div class="time">2016 - 2020</div>
-                            <h3 class="resume-title">Graphic design course</h3>
-                            <div class="institute">University of Denmark</div>
+                            <div class="time">2019 - 2020</div>
+                            <h3 class="resume-title">Computer Apllication Course</h3>
+                            <div class="institute">NCC of Tangail</div>
                         </div>
-                        <div class="resume-item wow fadeInRight" data-wow-delay=".7s">
-                            <div class="time">2012 - 2015</div>
-                            <h3 class="resume-title">Web design course</h3>
-                            <div class="institute">University of California</div>
-                        </div>
-                        <div class="resume-item wow fadeInRight" data-wow-delay=".8s">
-                            <div class="time">2010 - 2011</div>
-                            <h3 class="resume-title">Design &amp; Technology</h3>
-                            <div class="institute">Parsons, The New School</div>
-                        </div>
+<!--                        <div class="resume-item wow fadeInRight" data-wow-delay=".7s">-->
+<!--                            <div class="time">2012 - 2015</div>-->
+<!--                            <h3 class="resume-title">Web design course</h3>-->
+<!--                            <div class="institute">University of California</div>-->
+<!--                        </div>-->
+<!--                        <div class="resume-item wow fadeInRight" data-wow-delay=".8s">-->
+<!--                            <div class="time">2010 - 2011</div>-->
+<!--                            <h3 class="resume-title">Design &amp; Technology</h3>-->
+<!--                            <div class="institute">Parsons, The New School</div>-->
+<!--                        </div>-->
                     </div>
                 </div>
             </div>
@@ -499,54 +492,54 @@
                         <div class="skill-item wow fadeInUp" data-wow-delay=".3s">
                             <div class="skill-inner">
                                 <div class="icon-box">
-                                    <img src="images/figma.svg" alt="" />
+                                    <img src="{% static 'pub_assets/images/laravel.svg' %}" alt="laravel" />
                                 </div>
                                 <div class="number">92%</div>
                             </div>
-                            <p>Figma</p>
+                            <p>Laravel</p>
                         </div>
                         <div class="skill-item wow fadeInUp" data-wow-delay=".4s">
                             <div class="skill-inner">
                                 <div class="icon-box">
-                                    <img src="images/sketch.svg" alt="" />
+                                    <img src="{% static 'pub_assets/images/django.svg' %}" alt="django" />
                                 </div>
                                 <div class="number">80%</div>
                             </div>
-                            <p>Sketch</p>
+                            <p>Django</p>
                         </div>
                         <div class="skill-item wow fadeInUp" data-wow-delay=".5s">
                             <div class="skill-inner">
                                 <div class="icon-box">
-                                    <img src="images/xd.svg" alt="" />
+                                    <img src="{% static 'pub_assets/images/bootstrap.svg' %}" alt="bootstrap" />
                                 </div>
                                 <div class="number">85%</div>
                             </div>
-                            <p>XD</p>
+                            <p>Bootstrap</p>
                         </div>
                         <div class="skill-item wow fadeInUp" data-wow-delay=".6s">
                             <div class="skill-inner">
                                 <div class="icon-box">
-                                    <img src="images/wp.svg" alt="" />
+                                    <img src="{% static 'pub_assets/images/html.svg' %}" alt="html" />
                                 </div>
                                 <div class="number">99%</div>
                             </div>
-                            <p>WordPess</p>
+                            <p>HTML</p>
                         </div>
                         <div class="skill-item wow fadeInUp" data-wow-delay=".7s">
                             <div class="skill-inner">
                                 <div class="icon-box">
-                                    <img src="images/react.svg" alt="" />
+                                    <img src="{% static 'pub_assets/images/css.svg' %}" alt="css" />
                                 </div>
                                 <div class="number">89%</div>
                             </div>
-                            <p>React</p>
+                            <p>CSS</p>
                         </div>
                         <div class="skill-item wow fadeInUp" data-wow-delay=".8s">
                             <div class="skill-inner">
                                 <div class="icon-box">
-                                    <img src="images/js.svg" alt="" />
+                                    <img src="{% static 'pub_assets/images/js.svg' %}" alt="Javascript" />
                                 </div>
-                                <div class="number">93%</div>
+                                <div class="number">83%</div>
                             </div>
                             <p>JavaScript</p>
                         </div>

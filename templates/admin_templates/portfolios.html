@@ -53,7 +53,7 @@
 
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
 <!--                                            <a class="dropdown-item" href="javascript:void(0);">View</a>-->
-                                            <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                                            <a class="dropdown-item" href="{% url 'admin_panel.update_portfolio' portfolio.id %}">Edit</a>
 <!--                                            <a class="dropdown-item" href="javascript:void(0);">View Response</a>-->
                                             <a class="dropdown-item" href="{% url 'admin_panel.delete_portfolio' portfolio.id %}">Delete</a>
                                         </div>

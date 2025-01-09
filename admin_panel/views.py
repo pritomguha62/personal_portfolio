@@ -1,10 +1,15 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
+import base64
+
+from django.shortcuts import render, redirect, HttpResponseRedirect
+from django.http import HttpResponse, JsonResponse
+from django.core.files.base import ContentFile
+# import face_recognition
 from .forms import UserRegistrationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from .models import *
 from django.contrib.auth import get_user_model
+from django.views.decorators.csrf import csrf_exempt
 
 # User = get_user_model()
 
@@ -15,6 +20,9 @@ def dashboard(request):
 
 def signin(request):
     return render(request, 'admin_templates/admin_signin.html')
+
+def face_login(request):
+    return render(request, 'admin_templates/face_login.html')
 
 def signup(request):
     return render(request, 'admin_templates/admin_signup.html')
@@ -29,7 +37,7 @@ def signin_info(request):
 
         user = authenticate(email=email, password=password)
 
-        if user is not None:
+        if user is not None and user.is_staff == 1:
             login(request, user)
 
             # Set custom session data
@@ -39,7 +47,61 @@ def signin_info(request):
             # return HttpResponse(user.is_staff)
             return redirect('dashboard')
         else:
-            messages.error(request, "Invalid username or password.")
+            messages.error(request, "Login Invalid.")
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+@csrf_exempt
+# def face_login_info(request):
+#     email = request.POST.get('email')
+#
+#     face_image_data = request.POST['face_image']
+#
+#     try:
+#         admin = CustomAdmin.objects.get(email = email)
+#
+#         email_username = email.split("@")[1]
+#
+#     except CustomAdmin.DoesNotExist:
+#         return JsonResponse({
+#             'status' : 'error', 'message' : 'Invalid Username!'
+#         })
+#
+#         face_image_data = face_image_data.split(",")[1]
+#
+#         uploaded_image = ContentFile(base64.b64decode({face_image_data},name=f'{email_username}_.jpg'))
+#
+#         upload_face_image = face_recognition.load_image_file(uploaded_image)
+#
+#         upload_face_encoding = face_recognition.face_encodings(upload_face_image)
+#
+#         if upload_face_encoding:
+#             upload_face_encoding = upload_face_encoding[0]
+#             user_iamge = CustomAdmin.objects.filter(user = user).last()
+#             stored_face_image = face_recognition.load_image_file(user_iamge.face_image.path)
+#             stored_face_encoding = face_recognition.face_encodings(stored_face_image)
+#
+#             match = face_recognition.compare_faces([stored_face_encoding], upload_face_encoding)
+#
+#         email = request.POST.get('email')
+#
+#         face_image = request.POST['face_image']
+#
+#
+#
+#         user = authenticate(email=email, password=password)
+#
+#         if user is not None:
+#             login(request, user)
+#
+#             # Set custom session data
+#             request.session['email'] = user.email
+#             request.session['is_admin'] = user.is_staff
+#
+#             # return HttpResponse(user.is_staff)
+#             return redirect('dashboard')
+#         else:
+#             messages.error(request, "Invalid username or password.")
+#             return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 
 def signup_info(request):

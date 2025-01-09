@@ -3,6 +3,7 @@ from .models import *
 import os
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from datetime import datetime
 
 # Create your views here.
 
@@ -19,13 +20,19 @@ def add_service_info(request):
         short_description = service_info.get('short_description')
         description = service_info.get('description')
         image = request.FILES.get('image')
-        
-        Service.objects.create(
-            title = title,
-            short_description = short_description,
-            description = description,
-            image = image,
-        )
+
+        service = Service()
+        service.title = title
+        service.short_description = short_description
+        service.description = description
+
+        if request.FILES.get('image') is not None:
+            uploaded_image = request.FILES['image']
+            ext = uploaded_image.name.split('.')[-1]
+            timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
+            new_name_image = f"{title}{timestamp}.{ext}"
+            service.image.save(new_name_image, uploaded_image)
+
 
         messages.success(request, "Service added successfully.")
 
@@ -44,4 +51,39 @@ def delete_service(request, id):
     messages.success(request, "Service deleted successfully.")
     # return redirect('blog_post_detail', id=service.id)
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+
+def update_service(request, id):
+    update_service = get_object_or_404(Service, id=id)
+    return render(request, 'admin_templates/update_service.html', {'update_service':update_service})
+
+
+def update_service_info(request):
+    service = get_object_or_404(Service, id=request.POST.get('id'))
+    if request.method == "POST":
+        service_info = request.POST
+
+        title = service_info.get('title')
+        short_description = service_info.get('short_description')
+        description = service_info.get('description')
+        image = request.FILES.get('image')
+
+        service.title = title
+        service.short_description = short_description
+        service.description = description
+
+        if image is not None:
+            if service.image and os.path.isfile(service.image.path):
+                os.remove(service.image.path)
+            uploaded_image = request.FILES['image']
+            ext = uploaded_image.name.split('.')[-1]
+            timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
+            new_name = f"{title}{timestamp}.{ext}"
+            service.image.save(new_name, uploaded_image)
+
+        service.save()
+
+        messages.success(request, "Service Updated successfully.")
+
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
