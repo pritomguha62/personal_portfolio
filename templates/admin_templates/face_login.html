@@ -18,6 +18,12 @@
 <body>
   <div class="container mt-5">
     <h2 class="text-center">Face Login</h2>
+    <br>
+    <div class="row col-md-4 mx-auto">
+      <label data-model-name="email">Email: </label>
+      <input class="form-control text-center" type="email" id="email" placeholder="Email" >
+    </div>
+    <br>
     <div class="row justify-content-center">
       <div class="col-md-8 text-center">
         <video id="video" class="border" autoplay playsinline></video>
@@ -46,6 +52,8 @@
 
     // Capture image from video on button click
     captureButton.addEventListener('click', async function() {
+    let email = document.getElementById('email').value;
+    alert(email)
       canvas.width = video.videoWidth;
       canvas.height = video.videoHeight;
       ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
@@ -54,6 +62,7 @@
       if(capturedImage){
         const formData = new FormData();
         formData.append('face_image', capturedImage);
+        formData.append('email', email);
 
         try {
           const response = await fetch("{% url 'admin_panel.face_login_info' %}", {
