@@ -138,3 +138,13 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 's1fi.whiteservers.net'  # Replace with your email host
+EMAIL_PORT = 465  # Port for TLS
+EMAIL_USE_TLS = False  # Use TLS
+EMAIL_USE_SSL = True  # If you use SSL, set this to True and change the port to 465
+EMAIL_HOST_USER = 'contact@techpartit.net'  # Your email address
+EMAIL_HOST_PASSWORD = '*Bg+x@aKA%rd'  # Your email password
+DEFAULT_FROM_EMAIL = 'contact@techpartit.net'  # Default "from" email address
+
+

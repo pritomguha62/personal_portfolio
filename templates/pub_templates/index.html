@@ -56,7 +56,7 @@
                 <div class="row">
                     <div class="col-6 col-lg-3">
                         <div class="funfact-item d-flex flex-column flex-sm-row flex-wrap align-items-center">
-                            <div class="number"><span class="odometer" data-count="8">0</span></div>
+                            <div class="number"><span class="odometer" data-count="{{ experience }}">0</span></div>
                             <div class="text">
                                 Years of <br />
                                 Experience
@@ -83,7 +83,7 @@
                     </div>
                     <div class="col-6 col-lg-3">
                         <div class="funfact-item d-flex flex-column flex-sm-row flex-wrap align-items-center">
-                            <div class="number"><span class="odometer" data-count="8">0</span></div>
+                            <div class="number"><span class="odometer" data-count="{{ experience }}">0</span></div>
                             <div class="text">
                                 Years of <br />
                                 Experience
@@ -566,10 +566,10 @@
                             <div class="testimonial-item">
                                 <div class="top-area d-flex flex-wrap justify-content-between">
                                     <div class="logo-box">
-                                        <img src="images/1.png" alt="" />
+                                        <img src="{% static 'pub_assets/images/1.png' %}" alt="Holy IT" />
                                     </div>
                                     <div class="image-box">
-                                        <img src="images/1.jpg" alt="" />
+                                        <img src="{% static 'pub_assets/images/1.jpg' %}" alt="CEO" />
                                     </div>
                                 </div>
                                 <div class="icon-box">
@@ -598,17 +598,17 @@
                                         </defs>
                                     </svg>
                                 </div>
-                                <p class="quote">“Taylor is a professional Designer he really helps my business by providing value to my business.</p>
-                                <h4 class="name">Brandon Fraser</h4>
-                                <span class="designation">Senior Software Dev, Cosmic Sport</span>
+                                <p class="quote">"Exceptional Laravel developer! Delivered high-quality solutions on time and exceeded expectations."</p>
+                                <h4 class="name">Apurbo Debnath</h4>
+                                <span class="designation">CEO, Holy IT</span>
                             </div>
                             <div class="testimonial-item">
                                 <div class="top-area d-flex flex-wrap justify-content-between">
                                     <div class="logo-box">
-                                        <img src="images/2.png" alt="" />
+                                        <img src="{% static 'pub_assets/images/2.png' %}" alt="MediaTTC" />
                                     </div>
                                     <div class="image-box">
-                                        <img src="images/2.jpg" alt="" />
+                                        <img src="{% static 'pub_assets/images/2.jpg' %}" alt="Founder" />
                                     </div>
                                 </div>
                                 <div class="icon-box">
@@ -637,17 +637,17 @@
                                         </defs>
                                     </svg>
                                 </div>
-                                <p class="quote">“Taylor is a professional Designer he really helps my business by providing value to my business.</p>
-                                <h4 class="name">Tim Bailey</h4>
-                                <span class="designation">SEO Specialist, Theme Junction</span>
+                                <p class="quote">"Outstanding Laravel expertise! Efficient, reliable, and a pleasure to work with."</p>
+                                <h4 class="name">Harun-Or-Rashid Khan</h4>
+                                <span class="designation">Founder, MediaTTC</span>
                             </div>
                             <div class="testimonial-item">
                                 <div class="top-area d-flex flex-wrap justify-content-between">
                                     <div class="logo-box">
-                                        <img src="images/1.png" alt="" />
+                                        <img src="{% static 'pub_assets/images/3.png' %}" alt="Techpart IT" />
                                     </div>
                                     <div class="image-box">
-                                        <img src="images/1.jpg" alt="" />
+                                        <img src="{% static 'pub_assets/images/3.jpg' %}" alt="Founder & CEO" />
                                     </div>
                                 </div>
                                 <div class="icon-box">
@@ -676,127 +676,127 @@
                                         </defs>
                                     </svg>
                                 </div>
-                                <p class="quote">“Taylor is a professional Designer he really helps my business by providing value to my business.</p>
-                                <h4 class="name">Brandon Fraser</h4>
-                                <span class="designation">Senior Software Dev, Cosmic Sport</span>
+                                <p class="quote">"Highly skilled Django developer! Delivered seamless and scalable solutions."</p>
+                                <h4 class="name">Akit Kumar</h4>
+                                <span class="designation">Founder & CEO, Techpart IT</span>
                             </div>
-                            <div class="testimonial-item">
-                                <div class="top-area d-flex flex-wrap justify-content-between">
-                                    <div class="logo-box">
-                                        <img src="images/2.png" alt="" />
-                                    </div>
-                                    <div class="image-box">
-                                        <img src="images/2.jpg" alt="" />
-                                    </div>
-                                </div>
-                                <div class="icon-box">
-                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"
-                                            fill="url(#paint6_linear_263_514)"
-                                        ></path>
-                                        <defs>
-                                            <linearGradient id="paint6_linear_263_514" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientUnits="userSpaceOnUse">
-                                                <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
-                                                <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"
-                                            fill="url(#paint7_linear_263_515)"
-                                        ></path>
-                                        <defs>
-                                            <linearGradient id="paint7_linear_263_515" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientUnits="userSpaceOnUse">
-                                                <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
-                                                <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </div>
-                                <p class="quote">“Taylor is a professional Designer he really helps my business by providing value to my business.</p>
-                                <h4 class="name">Tim Bailey</h4>
-                                <span class="designation">SEO Specialist, Theme Junction</span>
-                            </div>
-                            <div class="testimonial-item">
-                                <div class="top-area d-flex flex-wrap justify-content-between">
-                                    <div class="logo-box">
-                                        <img src="images/1.png" alt="" />
-                                    </div>
-                                    <div class="image-box">
-                                        <img src="images/1.jpg" alt="" />
-                                    </div>
-                                </div>
-                                <div class="icon-box">
-                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"
-                                            fill="url(#paint8_linear_263_512)"
-                                        ></path>
-                                        <defs>
-                                            <linearGradient id="paint8_linear_263_512" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientUnits="userSpaceOnUse">
-                                                <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
-                                                <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"
-                                            fill="url(#paint9_linear_263_513)"
-                                        ></path>
-                                        <defs>
-                                            <linearGradient id="paint9_linear_263_513" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientUnits="userSpaceOnUse">
-                                                <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
-                                                <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </div>
-                                <p class="quote">“Taylor is a professional Designer he really helps my business by providing value to my business.</p>
-                                <h4 class="name">Brandon Fraser</h4>
-                                <span class="designation">Senior Software Dev, Cosmic Sport</span>
-                            </div>
-                            <div class="testimonial-item">
-                                <div class="top-area d-flex flex-wrap justify-content-between">
-                                    <div class="logo-box">
-                                        <img src="images/2.png" alt="" />
-                                    </div>
-                                    <div class="image-box">
-                                        <img src="images/2.jpg" alt="" />
-                                    </div>
-                                </div>
-                                <div class="icon-box">
-                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"
-                                            fill="url(#paint10_linear_263_514)"
-                                        ></path>
-                                        <defs>
-                                            <linearGradient id="paint10_linear_263_514" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientUnits="userSpaceOnUse">
-                                                <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
-                                                <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"
-                                            fill="url(#paint11_linear_263_515)"
-                                        ></path>
-                                        <defs>
-                                            <linearGradient id="paint11_linear_263_515" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientUnits="userSpaceOnUse">
-                                                <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
-                                                <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </div>
-                                <p class="quote">“Taylor is a professional Designer he really helps my business by providing value to my business.</p>
-                                <h4 class="name">Tim Bailey</h4>
-                                <span class="designation">SEO Specialist, Theme Junction</span>
-                            </div>
+<!--                            <div class="testimonial-item">-->
+<!--                                <div class="top-area d-flex flex-wrap justify-content-between">-->
+<!--                                    <div class="logo-box">-->
+<!--                                        <img src="images/2.png" alt="" />-->
+<!--                                    </div>-->
+<!--                                    <div class="image-box">-->
+<!--                                        <img src="images/2.jpg" alt="" />-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="icon-box">-->
+<!--                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                        <path-->
+<!--                                            d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"-->
+<!--                                            fill="url(#paint6_linear_263_514)"-->
+<!--                                        ></path>-->
+<!--                                        <defs>-->
+<!--                                            <linearGradient id="paint6_linear_263_514" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientUnits="userSpaceOnUse">-->
+<!--                                                <stop offset="1" stop-color="var(&#45;&#45;tj-theme-primary)"></stop>-->
+<!--                                                <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>-->
+<!--                                            </linearGradient>-->
+<!--                                        </defs>-->
+<!--                                    </svg>-->
+<!--                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                        <path-->
+<!--                                            d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"-->
+<!--                                            fill="url(#paint7_linear_263_515)"-->
+<!--                                        ></path>-->
+<!--                                        <defs>-->
+<!--                                            <linearGradient id="paint7_linear_263_515" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientUnits="userSpaceOnUse">-->
+<!--                                                <stop offset="1" stop-color="var(&#45;&#45;tj-theme-primary)"></stop>-->
+<!--                                                <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>-->
+<!--                                            </linearGradient>-->
+<!--                                        </defs>-->
+<!--                                    </svg>-->
+<!--                                </div>-->
+<!--                                <p class="quote">“Taylor is a professional Designer he really helps my business by providing value to my business.</p>-->
+<!--                                <h4 class="name">Tim Bailey</h4>-->
+<!--                                <span class="designation">SEO Specialist, Theme Junction</span>-->
+<!--                            </div>-->
+<!--                            <div class="testimonial-item">-->
+<!--                                <div class="top-area d-flex flex-wrap justify-content-between">-->
+<!--                                    <div class="logo-box">-->
+<!--                                        <img src="images/1.png" alt="" />-->
+<!--                                    </div>-->
+<!--                                    <div class="image-box">-->
+<!--                                        <img src="images/1.jpg" alt="" />-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="icon-box">-->
+<!--                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                        <path-->
+<!--                                            d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"-->
+<!--                                            fill="url(#paint8_linear_263_512)"-->
+<!--                                        ></path>-->
+<!--                                        <defs>-->
+<!--                                            <linearGradient id="paint8_linear_263_512" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientUnits="userSpaceOnUse">-->
+<!--                                                <stop offset="1" stop-color="var(&#45;&#45;tj-theme-primary)"></stop>-->
+<!--                                                <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>-->
+<!--                                            </linearGradient>-->
+<!--                                        </defs>-->
+<!--                                    </svg>-->
+<!--                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                        <path-->
+<!--                                            d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"-->
+<!--                                            fill="url(#paint9_linear_263_513)"-->
+<!--                                        ></path>-->
+<!--                                        <defs>-->
+<!--                                            <linearGradient id="paint9_linear_263_513" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientUnits="userSpaceOnUse">-->
+<!--                                                <stop offset="1" stop-color="var(&#45;&#45;tj-theme-primary)"></stop>-->
+<!--                                                <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>-->
+<!--                                            </linearGradient>-->
+<!--                                        </defs>-->
+<!--                                    </svg>-->
+<!--                                </div>-->
+<!--                                <p class="quote">“Taylor is a professional Designer he really helps my business by providing value to my business.</p>-->
+<!--                                <h4 class="name">Brandon Fraser</h4>-->
+<!--                                <span class="designation">Senior Software Dev, Cosmic Sport</span>-->
+<!--                            </div>-->
+<!--                            <div class="testimonial-item">-->
+<!--                                <div class="top-area d-flex flex-wrap justify-content-between">-->
+<!--                                    <div class="logo-box">-->
+<!--                                        <img src="images/2.png" alt="" />-->
+<!--                                    </div>-->
+<!--                                    <div class="image-box">-->
+<!--                                        <img src="images/2.jpg" alt="" />-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="icon-box">-->
+<!--                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                        <path-->
+<!--                                            d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"-->
+<!--                                            fill="url(#paint10_linear_263_514)"-->
+<!--                                        ></path>-->
+<!--                                        <defs>-->
+<!--                                            <linearGradient id="paint10_linear_263_514" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientUnits="userSpaceOnUse">-->
+<!--                                                <stop offset="1" stop-color="var(&#45;&#45;tj-theme-primary)"></stop>-->
+<!--                                                <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>-->
+<!--                                            </linearGradient>-->
+<!--                                        </defs>-->
+<!--                                    </svg>-->
+<!--                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                        <path-->
+<!--                                            d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"-->
+<!--                                            fill="url(#paint11_linear_263_515)"-->
+<!--                                        ></path>-->
+<!--                                        <defs>-->
+<!--                                            <linearGradient id="paint11_linear_263_515" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientUnits="userSpaceOnUse">-->
+<!--                                                <stop offset="1" stop-color="var(&#45;&#45;tj-theme-primary)"></stop>-->
+<!--                                                <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>-->
+<!--                                            </linearGradient>-->
+<!--                                        </defs>-->
+<!--                                    </svg>-->
+<!--                                </div>-->
+<!--                                <p class="quote">“Taylor is a professional Designer he really helps my business by providing value to my business.</p>-->
+<!--                                <h4 class="name">Tim Bailey</h4>-->
+<!--                                <span class="designation">SEO Specialist, Theme Junction</span>-->
+<!--                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -806,80 +806,80 @@
     <!-- TESTIMONIAL SECTION END -->
 
     <!-- BLOG SECTION STAR -->
-    <section class="blog-section" id="blog-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12" id="blogs">
-                    <div class="section-header text-center">
-                        <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Recent Blogs</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".4s">
-                            We put your ideas and thus your wishes in the form of a unique web project that inspires you and you customers.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-item wow fadeInUp" data-wow-delay=".5s">
-                        <div class="blog-thumb">
-                            <a href="blog-details.html">
-                                <img src="images/1_2.jpg" alt="" />
-                            </a>
-                            <a href="#" class="category">Tutorial</a>
-                        </div>
+<!--    <section class="blog-section" id="blog-section">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-12" id="blogs">-->
+<!--                    <div class="section-header text-center">-->
+<!--                        <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Recent Blogs</h2>-->
+<!--                        <p class="wow fadeInUp" data-wow-delay=".4s">-->
+<!--                            We put your ideas and thus your wishes in the form of a unique web project that inspires you and you customers.-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-4 col-md-6">-->
+<!--                    <div class="blog-item wow fadeInUp" data-wow-delay=".5s">-->
+<!--                        <div class="blog-thumb">-->
+<!--                            <a href="blog-details.html">-->
+<!--                                <img src="images/1_2.jpg" alt="" />-->
+<!--                            </a>-->
+<!--                            <a href="#" class="category">Tutorial</a>-->
+<!--                        </div>-->
 
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul class="ul-reset">
-                                    <li><i class="fa-light fa-calendar-days"></i> Oct 01, 2022</li>
-                                    <li><i class="fa-light fa-comments"></i> <a href="#">Comment (0)</a></li>
-                                </ul>
-                            </div>
-                            <h3 class="blog-title"><a href="blog-details.html">top 10 ui ux designers</a></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-item wow fadeInUp" data-wow-delay=".6s">
-                        <div class="blog-thumb">
-                            <a href="blog-details.html">
-                                <img src="images/2_2.jpg" alt="" />
-                            </a>
-                            <a href="#" class="category">TIPS</a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul class="ul-reset">
-                                    <li><i class="fa-light fa-calendar-days"></i> Nov 01, 2022</li>
-                                    <li><i class="fa-light fa-comments"></i> <a href="#">Comment (0)</a></li>
-                                </ul>
-                            </div>
-                            <h3 class="blog-title"><a href="blog-details.html">App Development Guides</a></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-item wow fadeInUp" data-wow-delay=".7s">
-                        <div class="blog-thumb">
-                            <a href="blog-details.html">
-                                <img src="images/3_1.jpg" alt="" />
-                            </a>
-                            <a href="#" class="category">FREEBIES</a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul class="ul-reset">
-                                    <li><i class="fa-light fa-calendar-days"></i> Dec 01, 2022</li>
-                                    <li><i class="fa-light fa-comments"></i> <a href="#">Comment (0)</a></li>
-                                </ul>
-                            </div>
-                            <h3 class="blog-title"><a href="blog-details.html">learn graphic design free</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!--                        <div class="blog-content">-->
+<!--                            <div class="blog-meta">-->
+<!--                                <ul class="ul-reset">-->
+<!--                                    <li><i class="fa-light fa-calendar-days"></i> Oct 01, 2024</li>-->
+<!--                                    <li><i class="fa-light fa-comments"></i> <a href="#">Comment (0)</a></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                            <h3 class="blog-title"><a href="blog-details.html">top 10 ui ux designers</a></h3>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 col-md-6">-->
+<!--                    <div class="blog-item wow fadeInUp" data-wow-delay=".6s">-->
+<!--                        <div class="blog-thumb">-->
+<!--                            <a href="blog-details.html">-->
+<!--                                <img src="images/2_2.jpg" alt="" />-->
+<!--                            </a>-->
+<!--                            <a href="#" class="category">TIPS</a>-->
+<!--                        </div>-->
+<!--                        <div class="blog-content">-->
+<!--                            <div class="blog-meta">-->
+<!--                                <ul class="ul-reset">-->
+<!--                                    <li><i class="fa-light fa-calendar-days"></i> Nov 01, 2024</li>-->
+<!--                                    <li><i class="fa-light fa-comments"></i> <a href="#">Comment (0)</a></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                            <h3 class="blog-title"><a href="blog-details.html">App Development Guides</a></h3>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 col-md-6">-->
+<!--                    <div class="blog-item wow fadeInUp" data-wow-delay=".7s">-->
+<!--                        <div class="blog-thumb">-->
+<!--                            <a href="blog-details.html">-->
+<!--                                <img src="images/3_1.jpg" alt="" />-->
+<!--                            </a>-->
+<!--                            <a href="#" class="category">FREEBIES</a>-->
+<!--                        </div>-->
+<!--                        <div class="blog-content">-->
+<!--                            <div class="blog-meta">-->
+<!--                                <ul class="ul-reset">-->
+<!--                                    <li><i class="fa-light fa-calendar-days"></i> Dec 01, 2024</li>-->
+<!--                                    <li><i class="fa-light fa-comments"></i> <a href="#">Comment (0)</a></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                            <h3 class="blog-title"><a href="blog-details.html">learn graphic design free</a></h3>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
     <!-- BLOG SECTION END -->
 
     <!-- CONTACT SECTION START -->
@@ -894,7 +894,7 @@
                         </div>
 
                         <div class="tj-contact-form">
-                            <form method="post" enctype="multipart/form-data" action="" id="">
+                            <form method="post" enctype="multipart/form-data" action="{% url 'contact_us_email' %}" id="">
                                 {% csrf_token %}
                                 <div class="row gx-3">
                                     <div class="col-sm-12">
@@ -919,7 +919,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form_group">
-                                            <select name="conService" id="conService" class="tj-nice-select">
+                                            <select name="service" id="conService" class="tj-nice-select">
                                                 <option value="" selected="" disabled="">Choose Service</option>
                                                 {% for service in services %}
                                                     <option value="{{ service.title }}">{{ service.title }}</option>
