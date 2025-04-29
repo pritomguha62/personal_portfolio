@@ -8,6 +8,7 @@ from .forms import UserRegistrationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from .models import *
+from site_setting.models import Site_setting
 from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
 
@@ -16,10 +17,15 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 def dashboard(request):
-    return render(request, 'admin_templates/dashboard.html')
+    
+    site_setting = Site_setting.objects.last()
+    
+    return render(request, 'admin_templates/dashboard.html', {'site_setting':site_setting})
 
 def signin(request):
-    return render(request, 'admin_templates/admin_signin.html')
+    
+    site_setting = Site_setting.objects.last()
+    return render(request, 'admin_templates/admin_signin.html', {'site_setting':site_setting})
 
 def face_login(request):
     return render(request, 'admin_templates/face_login.html')

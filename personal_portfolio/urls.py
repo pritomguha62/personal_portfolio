@@ -24,6 +24,7 @@ urlpatterns = [
     # path('admin/', admin.site.urls),
     path('admin_panel/', include("admin_panel.urls")),
     path('', views.home, name='home'),
+    path('site_setting/', include("site_setting.urls")),
     path('service/', include("service.urls")),
     path('portfolio/', include("portfolio.urls")),
     path('contact_us_email/', views.contact_us_email, name='contact_us_email'),

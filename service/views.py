@@ -4,11 +4,14 @@ import os
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from datetime import datetime
+from site_setting.models import Site_setting
 
 # Create your views here.
 
 def add_service(request):
-    return render(request, 'admin_templates/add_service.html')
+    
+    site_setting = Site_setting.objects.last()
+    return render(request, 'admin_templates/add_service.html', {'site_setting':site_setting})
 
 def add_service_info(request):
     
@@ -39,8 +42,10 @@ def add_service_info(request):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 def all_services(request):
+    
+    site_setting = Site_setting.objects.last()
     services = Service.objects.all()
-    return render(request, 'admin_templates/services.html', {'services':services})
+    return render(request, 'admin_templates/services.html', {'services':services, 'site_setting':site_setting})
 
 
 def delete_service(request, id):
@@ -54,8 +59,10 @@ def delete_service(request, id):
 
 
 def update_service(request, id):
+    
+    site_setting = Site_setting.objects.last()
     update_service = get_object_or_404(Service, id=id)
-    return render(request, 'admin_templates/update_service.html', {'update_service':update_service})
+    return render(request, 'admin_templates/update_service.html', {'update_service':update_service, 'site_setting':site_setting})
 
 
 def update_service_info(request):

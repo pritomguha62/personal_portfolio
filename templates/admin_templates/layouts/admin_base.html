@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>Admin Panel </title>
-    <link rel="icon" type="image/x-icon" href="{%static 'admin_assets/src/assets/img/favicon.ico' %}" />
+    <link rel="icon" type="image/x-icon" href="{{ site_setting.favicon.url }}" />
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
     <link href="{%static 'admin_assets/layouts/vertical-dark-menu/css/light/loader.css' %}" rel="stylesheet" type="text/css" />
     <link href="{%static 'admin_assets/layouts/vertical-dark-menu/css/dark/loader.css' %}" rel="stylesheet" type="text/css" />
@@ -841,7 +841,8 @@
                                                     class="dropdown-item"
                                                     data-value="Settings"
                                                     data-icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>'
-                                                    href="javascript:void(0);"
+                                                    {% comment %} href="javascript:void(0);" {% endcomment %}
+                                                    href="{% url 'admin_panel.add_site_setting' %}"
                                                 >
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg"
@@ -863,12 +864,7 @@
                                                     Settings
                                                 </a>
 
-                                                <a
-                                                    class="dropdown-item"
-                                                    data-value="Mail"
-                                                    data-icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>'
-                                                    href="javascript:void(0);"
-                                                >
+                                                {% comment %} <a class="dropdown-item" data-value="Mail" data-icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>' href="javascript:void(0);" >
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         width="24"
@@ -880,7 +876,7 @@
                                                         stroke-linecap="round"
                                                         stroke-linejoin="round"
                                                         class="feather feather-mail"
-                                                    >
+                                                        >
                                                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                                         <polyline points="22,6 12,13 2,6"></polyline>
                                                     </svg>
@@ -892,7 +888,7 @@
                                                     data-value="Print"
                                                     data-icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>'
                                                     href="javascript:void(0);"
-                                                >
+                                                    >
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         width="24"
@@ -917,7 +913,7 @@
                                                     data-value="Download"
                                                     data-icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>'
                                                     href="javascript:void(0);"
-                                                >
+                                                    >
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         width="24"
@@ -929,7 +925,7 @@
                                                         stroke-linecap="round"
                                                         stroke-linejoin="round"
                                                         class="feather feather-download"
-                                                    >
+                                                        >
                                                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                                         <polyline points="7 10 12 15 17 10"></polyline>
                                                         <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -942,7 +938,7 @@
                                                     data-value="Share"
                                                     data-icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>'
                                                     href="javascript:void(0);"
-                                                >
+                                                    >
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         width="24"
@@ -962,7 +958,7 @@
                                                         <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
                                                     </svg>
                                                     Share
-                                                </a>
+                                                </a> {% endcomment %}
                                             </div>
                                         </div>
                                     </li>

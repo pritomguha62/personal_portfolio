@@ -3,16 +3,20 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 import os
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib import messages
 from datetime import datetime
+from service.models import Service
+from site_setting.models import Site_setting
 
 
 # Create your views here.
 
 def add_portfolio(request):
+    
+    site_setting = Site_setting.objects.last()
     services = Service.objects.all()
-    return render(request, 'admin_templates/add_portfolio.html', {'services': services})
+    return render(request, 'admin_templates/add_portfolio.html', {'services': services, 'site_setting':site_setting})
 
 
 def add_portfolio_info(request):
@@ -65,8 +69,10 @@ def add_portfolio_info(request):
 
 
 def all_portfolios(request):
+    
+    site_setting = Site_setting.objects.last()
     portfolios = Portfolio.objects.all()
-    return render(request, 'admin_templates/portfolios.html', {'portfolios': portfolios})
+    return render(request, 'admin_templates/portfolios.html', {'portfolios': portfolios, 'site_setting':site_setting})
 
 
 def delete_portfolio(request, id):
@@ -82,8 +88,10 @@ def delete_portfolio(request, id):
 
 
 def update_portfolio(request, id):
+    
+    site_setting = Site_setting.objects.last()
     update_portfolio = get_object_or_404(Portfolio, id=id)
-    return render(request, 'admin_templates/update_portfolio.html', {'update_portfolio':update_portfolio})
+    return render(request, 'admin_templates/update_portfolio.html', {'update_portfolio':update_portfolio, 'site_setting':site_setting})
 
 
 def update_portfolio_info(request):

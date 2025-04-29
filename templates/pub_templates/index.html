@@ -14,41 +14,65 @@
             <div class="row align-items-center">
                 <div class="col-md-8">
                     <div class="hero-content-box">
-                        <span class="hero-sub-title">I am Pritom GK</span>
+                        <span class="hero-sub-title">I am {% if site_setting.name %}{{ site_setting.name }}{% endif %}</span>
                         <h1 class="hero-title">
-                            Web Developer +<br />
-                            Programmer
+                            {% comment %} Web Developer +<br />
+                            Programmer {% endcomment %}
+                            {% if site_setting.tagline %}{{ site_setting.tagline|safe }}{% endif %}
                         </h1>
 
                         <div class="hero-image-box d-md-none text-center">
-                            <img src="{%static 'pub_assets/images/logo.jpg' %}" alt="Pritom GK, Backend Developer specializing in Laravel and Django" />
+                            <img src="{{ site_setting.image.url }}" alt="Pritom GK, Backend Developer specializing in Laravel and Django" />
                         </div>
 
                         <p class="lead">
                             Specialized in Backend Development with Laravel and Django
                         </p>
                         <div class="button-box d-flex flex-wrap align-items-center">
-                            <a href="{%static 'pub_assets/others/pritom_gk_resume.pdf' %}" download="" class="btn tj-btn-secondary">Download Resume <i class="flaticon-download"></i></a>
+                            <a href="{{ site_setting.resume.url }}" download="" class="btn tj-btn-secondary">Download Resume <i class="flaticon-download"></i></a>
                             <ul class="ul-reset social-icons">
-                                <li>
-                                    <a target="_blank" href="https://x.com/pritom_gk"><i class="fa-brands fa-x-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a target="_blank" href="https://www.linkedin.com/in/pritomgk/"><i class="fa-brands fa-linkedin-in"></i></a>
-                                </li>
-                                <li>
-                                    <a target="_blank" href="#"><i class="fa-light fab fa-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a target="_blank" href="https://github.com/pritomgk"><i class="fa-brands fa-github"></i></a>
-                                </li>
+                                {% if site_setting.twitter %}
+                                    <li>
+                                        <a target="_blank" href="{{ site_setting.twitter }}"><i class="fa-brands fa-x-twitter"></i></a>
+                                    </li>
+                                {% endif %}
+                                {% if site_setting.linkedin %}
+                                    <li>
+                                        <a target="_blank" href="{{ site_setting.linkedin }}"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    </li>
+                                {% endif %}
+                                {% if site_setting.facebook %}
+                                    <li>
+                                        <a target="_blank" href="{{ site_setting.facebook }}"><i class="fa-light fab fa-facebook"></i></a>
+                                    </li>
+                                {% endif %}
+                                {% if site_setting.instagram %}
+                                    <li>
+                                        <a target="_blank" href="{{ site_setting.instagram }}"><i class="fa-brands fa-instagram"></i></a>
+                                    </li>
+                                {% endif %}
+                                {% if site_setting.whatsapp %}
+                                    <li>
+                                        <a target="_blank" href="{{ site_setting.whatsapp }}"><i class="fa-brands fa-whatsapp"></i></a>
+                                    </li>
+                                {% endif %}
+                                {% if site_setting.github %}
+                                    <li>
+                                        <a target="_blank" href="{{ site_setting.github }}"><i class="fa-brands fa-github"></i></a>
+                                    </li>
+                                {% endif %}
+                                {% if site_setting.youtube %}
+                                    <li>
+                                        <a target="_blank" href="{{ site_setting.youtube }}"><i class="fa-brands fa-youtube"></i></a>
+                                    </li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 d-none d-md-block">
                     <div class="hero-image-box text-center">
-                        <img src="{%static 'pub_assets/images/logo.jpg' %}" alt="Pritom GK, Backend Developer specializing in Laravel and Django" />
+                        <img src="{{ site_setting.image.url }}" alt="Pritom GK, Backend Developer specializing in Laravel and Django" />
                     </div>
                 </div>
             </div>
@@ -956,7 +980,9 @@
                                 </div>
                                 <div class="text-box">
                                     <p>Phone</p>
-                                    <a href="tel:+8801767817784">+8801767817784</a>
+                                    {% if site_setting.phone %}
+                                        <a href="tel:{{ site_setting.phone }}">{{ site_setting.phone }}</a>
+                                    {% endif %}
                                 </div>
                             </li>
                             <li class="d-flex flex-wrap align-items-center position-relative wow fadeInRight" data-wow-delay=".5s">
@@ -965,7 +991,9 @@
                                 </div>
                                 <div class="text-box">
                                     <p>Email</p>
-                                    <a href="mailto:gkpritom@gmail.com">gkpritom@gmail.com</a>
+                                    {% if site_setting.email %}
+                                        <a href="mailto:{{ site_setting.email }}">{{ site_setting.email }}</a>
+                                    {% endif %}
                                 </div>
                             </li>
                             <li class="d-flex flex-wrap align-items-center position-relative wow fadeInRight" data-wow-delay=".6s">
@@ -975,8 +1003,9 @@
                                 <div class="text-box">
                                     <p>Address</p>
                                     <a href="#">
-                                        Tangail Sadar, Tangail, <br />
-                                        Dhaka, Bangladesh
+                                        {% comment %} Tangail Sadar, Tangail, <br />
+                                        Dhaka, Bangladesh {% endcomment %}
+                                        {% if site_setting.address %}{{ site_setting.address }}{% endif %}
                                     </a>
                                 </div>
                             </li>

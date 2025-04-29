@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from site_setting.models import Site_setting
 from service.models import Service
 from portfolio.models import Portfolio
 from django.core.mail import EmailMessage
@@ -9,6 +10,9 @@ from datetime import datetime
 from django.shortcuts import render
 
 def home(request):
+    
+    site_setting = Site_setting.objects.last()
+    # return HttpResponse(site_setting.title)
 
     services = Service.objects.all()
 
@@ -16,7 +20,7 @@ def home(request):
 
     experience = datetime.now().year - 2018
 
-    return render(request, 'pub_templates/index.html', {'services':services, 'portfolios':portfolios, 'experience':experience})
+    return render(request, 'pub_templates/index.html', {'site_setting':site_setting, 'services':services, 'portfolios':portfolios, 'experience':experience})
 
 
 def contact_us_email(request):
